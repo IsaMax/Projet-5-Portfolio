@@ -1,0 +1,517 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-intro {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+    overflow: hidden;
+    box-shadow: 3px 3px 20px 10px #00000036;
+}
+
+.block-red,
+.block-white {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+.block-red.av {
+    background-color: #ff5851;
+}
+
+.block-white.av {
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.block-red.av,
+.block-white.av {
+    width: calc(100vw / 2);
+    left: 50%;
+}
+
+.block-red.av {
+    z-index: 10;
+}
+
+.block-white.av {
+    z-index: 9;
+}
+
+
+
+/*      ******** SVG ********      */
+
+
+.nom-prenom {
+    position: absolute;
+    width: fit-content;
+    z-index: 11;
+    top: 37%;
+    transform: translate(-50%,-50%);
+    left: 25%;
+}
+
+rect {
+    stroke: transparent;
+    fill: none;
+}
+
+svg #ligne1 {
+    font-size: 7em;
+    font-weight: bold;
+
+    fill: black;
+    stroke-dasharray: 38px;
+    stroke-dashoffset: 50px;
+    stroke: black;
+    fill-opacity: 0;
+}
+
+#ligne1 span {
+    fill: yellow;
+    stroke-dasharray: 38px;
+    stroke-dashoffset: 50px;
+}
+
+text#ligne2 {
+    font-size: 8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    fill: black;
+    stroke: black;
+    fill-opacity: 0;
+}
+
+svg#isambert {
+    display: block;
+}
+
+svg#maxime {
+    display: block;
+    margin-top: 1rem;
+}
+
+svg path {
+    fill: #212121;
+    fill-opacity: 0;
+    stroke: #FFF;
+}
+
+svg#isambert g path:nth-child(1) {
+    stroke-dasharray: 198px;
+    stroke-dashoffset: 198px;
+}
+
+svg#isambert g path:nth-child(2) {
+    stroke-dasharray: 414px;
+    stroke-dashoffset: 414px;
+}
+
+svg#isambert g path:nth-child(3) {
+    stroke-dasharray: 292px;
+    stroke-dashoffset: 292px;
+}
+
+svg#isambert g path:nth-child(4) {
+    stroke-dasharray: 631px;
+    stroke-dashoffset: 631px;
+}
+
+svg#isambert g path:nth-child(5) {
+    stroke-dasharray: 447px;
+    stroke-dashoffset: 447px;
+}
+
+svg#isambert g path:nth-child(6) {
+    stroke-dasharray: 413px;
+    stroke-dashoffset: 413px;
+}
+
+svg#isambert g path:nth-child(7) {
+    stroke-dasharray: 429px;
+    stroke-dashoffset: 429px;
+}
+
+svg#isambert g path:nth-child(8) {
+    stroke-dasharray: 297px;
+    stroke-dashoffset: 297px;
+}
+
+
+svg#maxime g path:nth-child(1) {
+    stroke-dasharray: 721px;
+    stroke-dashoffset: 721px;
+}
+
+svg#maxime g path:nth-child(2) {
+    stroke-dasharray: 345px;
+    stroke-dashoffset: 345px;
+}
+
+svg#maxime g path:nth-child(3) {
+    stroke-dasharray: 401px;
+    stroke-dashoffset: 401px;
+}
+
+svg#maxime g path:nth-child(4) {
+    stroke-dasharray: 254px;
+    stroke-dashoffset: 254px;
+}
+
+svg#maxime g path:nth-child(5) {
+    stroke-dasharray: 567px;
+    stroke-dashoffset: 567px;
+}
+
+svg#maxime g path:nth-child(6) {
+    stroke-dasharray: 308px;
+    stroke-dashoffset: 308px;
+}
+
+
+
+/*      ******** MENU ********      */
+
+
+.main-menu {
+    position: absolute;
+    bottom: -10%;
+    z-index: 21;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, 0);
+    opacity: 0;
+
+}
+
+.main-menu .wrapper-circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+
+.main-menu .circle {
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color:#fcfbff;
+    box-shadow:-3px 0px 11px 2px rgba(12, 10, 10, 0.14),
+    3px 0px 12px 9px rgba(12, 10, 10, 0.15),
+    -4px 0px 12px 10px rgba(12, 10, 10, 0.13);
+    transform: translate(0, 50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main-menu .circle::before {
+    content: "+";
+    position: absolute;
+    color: red;
+    top: 16%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+    font-size: 3em;
+    transition: transform .5s;
+}
+
+.main-menu .circle::after {
+    content: "_";
+    position: absolute;
+    color: red;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+    font-size: 3em;
+    transition: transform .5s;
+}
+
+.main-menu .circle:hover::before {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.main-menu ul {
+    list-style-type: none;
+}
+
+.main-menu [class^='wrapper-sub-menu'] {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom;
+    height: 310px;
+    z-index: 4;
+    filter: drop-shadow(5px 10px 10px rgba(46, 46, 38, 0.315));
+    transform: translate(-50%, 100%) rotate(0deg);
+}
+
+.main-menu .wrapper-sub-menu-home { z-index: 6; }
+
+
+.main-menu .sub-menu {
+    position: relative;
+    width: 110px;
+    height: 210px;
+    background-color: #f8f8f8;
+    border: 1px solid #dadada;
+    clip-path: polygon(24% 8%,0 100%,89% 100%,78% 8%);
+    z-index: 11;
+
+    transform: rotate(180deg) scale(1);
+    transition: transform .2s;
+}
+
+.sub-menu a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.sub-menu:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.sub-menu::before {
+    position: absolute;
+    color: #ff5851;
+    text-shadow:1px -1px 1px rgb(4, 4, 4);
+    font-size: 2em;
+    letter-spacing: 1px;
+    width: 200px;
+
+    transform: rotate(91deg);
+    top:59%;
+    left: -44%;
+
+    transition: all .2s;
+}
+
+.sub-menu:hover::before {
+    text-shadow: -1px 1px 1px rgb(4, 4, 4);
+}
+
+.sub-menu.cv::before {
+    content: "Parcours";
+}
+
+.sub-menu.desc::before {
+    content: "A propos";
+}
+
+.sub-menu.home::before {
+    content: "Accueil";
+}
+
+.sub-menu.portfolio::before {
+    content: "Créations";
+}
+
+.sub-menu.contact::before {
+    content: "Contact";
+}
+
+.wrapper-jesuis {
+    opacity: 0;
+    position: absolute;
+    z-index: 11;
+    top: 60%;
+    left: 27%;
+    font-size: 2em;
+}
+
+.wrapper-jesuis .textChange {
+    color: #FFF;
+}
+
+.a-propos strong::before {
+    content: "";
+    background: #0088fd78;
+    width: 90%;
+    height: 15px;
+    position: absolute;
+    top: 11px;
+    right: -5px;
+    z-index: -1;
+    transform-origin: left;
+    transform: scale(0);
+    transition: transform .5s .5s;
+}
+
+.a-propos strong {
+    position: relative;
+}
+
+.a-propos .desc1 strong.active:first-child::before {
+    transition-delay: .2s;
+    transform: scale(1);
+}
+
+.a-propos .desc1 strong.active:last-child::before {
+    transition-delay: .2s;
+    transform: scale(1);
+}
+
+.a-propos .desc2 strong.active:first-child::before {
+    transition-delay: .4s;
+    transform: scale(1);
+}
+
+.a-propos .desc2 strong.active:last-child::before {
+    transition-delay: .6s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(1)::before {
+    transition-delay: .8s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(2)::before {
+    transition-delay: 1s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(3)::before {
+    transition-delay: 1.2s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(4)::before {
+    transition-delay: 1.4s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(5)::before {
+    transition-delay: 1.6s;
+    transform: scale(1);
+}
+.a-propos .desc3 strong.active:nth-child(6)::before {
+    transition-delay: 1.8s;
+    transform: scale(1);
+}
+
+/*.a-propos strong.active::before {
+    transition-delay: .2s;
+    transform: scale(1);
+}*/
+
+/* ********** STAR ********** faire logo html css etc en petit détouré et volant autour de ma photo.....*/
+
+
+.logo img {
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+section.section-intro .scroll {
+    opacity: 0;
+    position: absolute;
+    z-index: 12;
+    transform: rotate(90deg);
+    left: 48.8%;
+    bottom: 8rem;
+    font-weight: bold;
+}
+
+section.section-intro h3 {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: -28px;
+    transform: translateX(-50%);
+    font-size: 3em;
+    text-transform: uppercase;
+    z-index: 10;
+    color: #e54c26;
+}
+
+.section-intro .a-propos {
+    width: 40%;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 19px;
+    line-height: 27px;
+}
+
+.section-intro .a-propos div:not(:last-child) { margin-bottom: 2rem; }
+
+.section-intro .a-propos div { transform: scale(0); }
+
+.bloc-competences {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.bloc-competences .progress {
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.bloc-competences >div {
+    display: flex;
+    align-items: center;
+}
+
+.logo.jquery .progress { margin-left: 32px; }
+.logo.presta .progress { margin-left: 31px; }
+
+.progress > span {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #0000003b;
+    border-radius: 50%;
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.progress > span:not(:last-child) { margin-right: .75rem; }
+
+.html .progress > span { background-color: #ed4727; }
+.css .progress > span { background: #3e97d7; }
+.js .progress > span { background: #fcd939; }
+.drupal .progress > span { background: #0273b9; }
+.sass .progress > span { background: #c56d99; }
+.vue .progress > span { background: #41b783; }
+.adobe .progress > span { background: #cf202b; }
+.wp .progress > span { background: #1d759e; }
+.php .progress > span { background: #6f81ba; }
+.jquery .progress > span { background: #2073a5; }
+.presta .progress > span { background: #da0970; }
+
+.logo { position: absolute; }
+.logo.html { top: 30rem; }
+.logo.css { top: 5rem; }
+.logo.js { top: 10rem; }
+.logo.drupal { top: 50rem; }
+.logo.sass { top: 20rem; }
+.logo.vue { top: 25rem; }
+.logo.adobe { top: 0; }
+.logo.wp { top: 35rem; }
+.logo.php { top: 40rem; }
+.logo.jquery { top: 45rem; }
+.logo.presta { top: 15rem; }
+
