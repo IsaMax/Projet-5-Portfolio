@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 
-    gsap.registerPlugin(TextPlugin);
+  //  gsap.registerPlugin(TextPlugin);
 
     /* Animation MENU */
     var menu = document.querySelectorAll("[class^='wrapper-sub-menu']");
@@ -52,7 +52,6 @@ window.addEventListener('load', function() {
     });
 
     gsap.to('.main-menu', {
-
         bottom:0,
         opacity: 1,
         delay: 3.2,
@@ -184,6 +183,7 @@ window.addEventListener('load', function() {
 
 
             if(e.deltaY > 0 && deuxiemePageActive === false) {
+
 
                 deuxiemePageActive = true;
                 t3.to('.nom-prenom', {y: -50, opacity: 0, duration: 1});

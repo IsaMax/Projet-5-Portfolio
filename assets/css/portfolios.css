@@ -1,0 +1,372 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+nav.second-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem 0 5rem;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav.second-menu .bloc-droit {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav.second-menu .bloc-droit a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+nav.second-menu .bloc-droit a:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #eb2d0e;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform .3s;
+}
+
+nav.second-menu .bloc-droit a:hover:after {
+    transform: scale(1);
+}
+
+
+.second-menu > div {
+    position: relative;
+}
+
+.second-menu .hover {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+nav.second-menu .bloc-droit li:not(:last-child) {
+    margin-right: 1.6rem;
+}
+
+.second-menu .default .home-item, .second-menu .hover .home-item {
+     font-weight: bold;
+     background-image: linear-gradient(31deg, #e80c0c -2%, #f5b312);
+     font-size: 1.2em;
+     color: transparent;
+     background-clip: text;
+     -webkit-background-clip: text;
+     font-family: 'Permanent Marker', cursive;
+    opacity: 1;
+    transition: all .3s;
+ }
+
+.second-menu .hover .home-item {
+
+    background-image: linear-gradient(45deg, #f5b312 -10%,#e80c0c );
+    opacity: 1;
+    transition: all .5s;
+}
+
+.second-menu .default .home-item:hover {
+    opacity: 0;
+}
+
+section.bloc-central {
+    width: 72%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+nav.position-portfolio {
+    width: 14%;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.container-filtres {
+    width: 14%;
+    position: relative;
+    height: 100vh;
+}
+
+nav.position-portfolio ul {
+    list-style-type: none;
+    padding-left: 0;
+    height: fit-content;
+    position: fixed;
+    width: 18%;
+}
+
+nav.position-portfolio .sub-elt {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav.position-portfolio .sub-elt .nombre {
+    font-weight: bold;
+    font-size: 1.8em;
+    position: relative;
+}
+
+nav.position-portfolio .sub-elt .texte-fin {
+    font-size: 0.8em;
+    margin-left: 1rem;
+    color: #00000000;
+    transform: translateX(-20px);
+    transition: all .5s;
+}
+
+nav.position-portfolio .sub-elt {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+section.bloc-central div {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.bloc-central h2 {
+    font-size: 6rem;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+}
+
+section.bloc-central img {
+    position: absolute;
+    z-index: -1;
+    width: 380px;
+    transform: translate3d(20px, 35px, 0) scale(0.9);
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.portfolio:hover> img, .bloc-mvt .active img {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: .4;
+}
+
+section.bloc-central h3 {
+    margin: 0;
+    opacity: 0;
+    transition: opacity .5s;
+    transition-delay: .1s
+    color: #0000009e;
+}
+
+.portfolio:hover>h3, .bloc-mvt .active h3 {
+    opacity: .8;
+}
+
+section.bloc-central a:not(:last-child) {
+    margin-bottom: 8rem;
+}
+
+section.bloc-central a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    height: 14rem;
+    color: black;
+}
+
+section.container-portfolio {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.container-filtres span {
+    display: block;
+    position: fixed;
+    cursor: pointer;
+    top: 50%;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    right: 1rem;
+    font-weight: bold;
+    transform: rotate(90deg) translateY(-50%);
+}
+
+.filtres ul {
+    list-style-type: none;
+    padding-left: 0;
+    opacity: 0;
+}
+
+.filtres ul a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 6rem;
+    background-image: none;
+    transition: all .3s;
+}
+
+.container-filtres .filtres {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 110vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+
+}
+
+.container-filtres .filtres:not(ul) {
+    cursor: url('assets/cross.png'), default;
+}
+
+.filtres li:not(:last-child) {
+    margin-bottom: 5rem;
+}
+
+.filtres ul li a:hover {
+    background-image: repeating-linear-gradient(45deg, #e21919, #dce819c4);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+
+.bloc-mvt {
+    position: relative;
+    top: 0;
+    margin-top: 16rem;
+    margin-bottom: 30rem;
+}
+
+.categorie {
+    width: 24rem !important;
+    display: flex;
+    flex-direction: row !important;
+    margin-top: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .2s;
+}
+
+.portfolio:hover > .categorie, .bloc-mvt .active .categorie {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.categorie span {
+    display: block;
+    padding: .3rem .5rem;
+    background: #000000db;
+    color: white;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: 1px;
+}
+
+.categorie span:not(:last-child) {
+    margin-right: .2rem;
+}
+
+li.sub-elt a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+li.sub-elt a:before {
+    width: 15px;
+    height: 1px;
+    background: black;
+    position: absolute;
+    content: "";
+    top: 50%;
+    transition: background .2s;
+}
+
+li.sub-elt .nombre {
+    opacity: 0;
+}
+
+li.sub-elt a:hover > .texte-fin:before, .sub-elt a.hoverPortfolio > .texte-fin:before {
+    width: 10px;
+    opacity: 1;
+}
+
+.sub-elt a:hover > .texte-fin, .sub-elt a.active > .texte-fin, .sub-elt a.hoverPortfolio > .texte-fin {
+    color: #000000;
+    transform: translateX(0);
+}
+
+nav.position-portfolio ul {
+    padding-left: 2rem;
+    transform: translateY(-82px);
+}
+
+span.texte-fin:before, li.sub-elt a.active .texte-fin:before{
+    width: 0;
+    height: 1px;
+    background: black;
+    position: absolute;
+    opacity: 1;
+    content: "";
+    top: 50%;
+    left: -35px;
+    transition: all .3s;
+}
+
+li.sub-elt a.active:before {
+    background: white;
+}
+
+li.sub-elt a.active .nombre {
+    opacity: 1;
+}
+
+.second-menu .default .home-item {
+    animation: menuDefault 4s infinite;
+}
+
+.second-menu .hover .home-item {
+    animation:  menuHover 4s infinite;
+}
+
+@keyframes menuDefault {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes menuHover {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
