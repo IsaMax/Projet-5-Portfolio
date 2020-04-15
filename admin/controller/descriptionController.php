@@ -10,7 +10,7 @@ class descriptionController {
         
         $nombre = $data->countDescription();
 
-        require './vue/descriptionView.php';
+        require 'vue/descriptionView.php';
     }
 
     public static function enregistrerDescription() {
@@ -29,9 +29,6 @@ class descriptionController {
                 throw new Exception('Impossible d\'effectuer cette action');
             }
         }
-
-        require './vue/descriptionView.php';
     }
-
-
+    
 }

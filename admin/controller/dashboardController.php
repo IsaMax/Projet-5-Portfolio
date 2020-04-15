@@ -5,7 +5,7 @@ class dashboardController {
 
         
 
-        require './vue/dashboardView.php';
+        require 'vue/dashboardView.php';
     }
 
 

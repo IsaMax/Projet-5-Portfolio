@@ -4354,6 +4354,7 @@ input[type=button].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  text-align: center;
 }
 
 .card-title {
@@ -5838,6 +5839,7 @@ a.close.disabled {
 .carousel-item-next,
 .carousel-item-prev {
   display: block;
+  height: 100%;
 }
 
 .carousel-item-next:not(.carousel-item-left),
@@ -10215,14 +10217,44 @@ body {
 
 #FormJs {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40vw;
-  height: 40vh;
+  top: 2%;
+  left: 30%;
   z-index: -1;
   opacity: 0;
   transition: opacity .5s;
+  width: 50vw;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: aliceblue;
+  box-shadow: 3px 3px 17px 5px #00000073;
+}
+
+#FormJsProjet {
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .5s;
+  width: 58vw;
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: aliceblue;
+  box-shadow: 3px 3px 17px 5px #00000073;
+}
+
+#FormJsProjet .close {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  font-size: 2.2rem !important;
+  color: red;
 }
 
 #FormJs .close {
@@ -10230,7 +10262,125 @@ body {
   display: block;
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 0;
+  font-size: 2.2rem !important;
   color: red;
-  font-size: 2em;
+}
+
+.ajout-parcours {
+  margin: 7rem 0;
+}
+
+.ajout-parcours h3 {
+  text-align: center;
+  color: red;
+  margin-bottom: 3rem;
+}
+
+button#submitNewParcours {
+  display: block;
+  margin-top: 2rem;
+}
+
+.ajout-parcours .p--icones {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.a--actionParcours, .a--actionProjet {
+  display: inline-block;
+}
+
+.a--actionParcours:hover, .a--actionProjet:hover {
+  text-decoration: none;
+}
+
+.a--actionParcours:first-child, .a--actionProjet:first-child {
+  margin-right: 1rem;
+}
+
+form#formModif {
+  width: 60%;
+}
+
+button#submitModif {
+  display: block;
+  margin-top: 2rem;
+}
+
+textarea#addBodyParcours {
+  height: 170px;
+}
+
+form#formNouveauProjet {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.h3--ajouter-projet {
+  text-align: center;
+  margin: 4rem 0;
+  color: red;
+  font-size: 3em;
+}
+
+.photo-elt {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  height: 100%;
+}
+
+.bloc-images {
+  height: 360px;
+}
+
+.carousel-control-next, carousel-control-prev {
+  color: red;
+}
+
+.bloc-projet {
+  box-shadow: 1px 0px 17px 6px #00000054;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.bloc-description {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.bloc-description.nomProjet {
+  font-weight: bold;
+}
+
+.row.bloc-projets {
+
+  padding: 3rem 0;
+}
+
+.photoAModifier {
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 0;
+}
+
+.container-photo .bloc-photos {
+  text-align: center;
+}
+
+.container-photo .bloc-photos div {
+  margin-bottom: 1rem;
+}
+
+form#formModifProjet {
+  width: 70%;
 }

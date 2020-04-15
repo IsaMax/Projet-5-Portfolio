@@ -43,7 +43,7 @@ try {
                 break;
 
             case 'contact':
-                if(isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['contenu'])) {
+                if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['sujet']) && isset($_POST['contenu'])) {
 
                     contactController::postMessage();
                 }

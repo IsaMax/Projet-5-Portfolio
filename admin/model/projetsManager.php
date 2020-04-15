@@ -1,17 +1,38 @@
 <?php
 
 
-class descriptionManager extends Manager {
+class projetsManager extends Manager {
 
     public function afficherLeProjet() {
 
         $data = $this->dbConnect();
 
-        $alp = $data->query('SELECT * FROM projet WHERE id = ?');
-        $alp->execute(array($_GET['id_projet']));
+        $alp = $data->prepare('SELECT * FROM projet WHERE id = ?');
+
+        $alp->execute(array($_GET['id_projets']));
 
         return $alp->fetch();
     }
+
+    public function afficherLesPhotos() {
+
+        $data = $this->dbConnect();
+
+        $alp = $data->prepare('SELECT * FROM photo_projet WHERE nom_projet = ?');
+        $alp->execute(array($_GET['nom_projet']));
+
+        return $alp->fetchAll();
+    }
+
+    public function afficherToutesLesPhotos() {
+
+        $data = $this->dbConnect();
+
+        $alp = $data->query('SELECT * FROM photo_projet');
+
+        return $alp->fetchAll();
+    }
+
 
     public function getProjets() {
 
@@ -27,27 +48,29 @@ class descriptionManager extends Manager {
         $data = $this->dbConnect();
 
         $mp = $data->prepare('UPDATE projet 
-                              SET nom = :nom, description = :description, url = :url, categorie = :categorie
+                              SET nom = :nom, description = :description, url = :url, categorie = :categorie, nom_projet_encode = :nom_projet_encode
                               WHERE id = :id');
 
         $mp->execute(array(
             ':nom' => $_POST['nom'],
-            ':description' => $_POST['description'],
+            ':description' => $_POST['bodyProjet'],
             ':url' => $_POST['url'],
             ':categorie' => $_POST['categorie'],
-            ':id' => $_GET['id_projet']
+            ':nom_projet_encode' => $_GET['nom_projet'],
+            ':id' => $_GET['id_projets']
         ));
     }
+
 
     public function majPhotos($url) {
 
         $data = $this->dbConnect();
 
-        $mp = $data->prepare('INSERT INTO photo_projet(id_projet, url)
-                       VALUES(:id_projet, :url)');
-
-        $id->execute(array(
-            ':id_projet' => $_GET['id_projet'],
+        $mp = $data->prepare('INSERT INTO photo_projet(nom_projet, url)
+                       VALUES(:nom_projet, :url)');
+        
+        $mp->execute(array(
+            ':nom_projet' => $_GET['nom_projet'],
             ':url' => $url,
         ));
     }
@@ -57,17 +80,15 @@ class descriptionManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $id = $data->prepare('INSERT INTO projet(titre, sous_titre, body, annee, iconeEtude, iconeJob)
-                       VALUES(:titre, :sous_titre, :body, :annee, :iconeEtude, :iconeJob)');
+        $id = $data->prepare('INSERT INTO projet(nom, description, url, categorie, nom_projet_encode)
+                       VALUES(:nom, :description, :url, :categorie, :nom_projet_encode)');
 
         $id->execute(array(
-            ':titre' => $_POST['titre'],
-            ':sous_titre' => $_POST['sous_titre'],
-            ':body' => $_POST['bodyParcours'],
-            ':annee' => $_POST['anneeParcours'],
-            ':iconeEtude' => $_POST['etude'],
-            ':iconeJob' => $_POST['job'],
-            ':id' => $_GET['id_parcours']
+            ':nom' => $_POST['nom'],
+            ':description' => $_POST['bodyNouveauProjet'],
+            ':url' => $_POST['url'],
+            ':categorie' => $_POST['categorie'],
+            ':nom_projet_encode' => $_GET['nom_projet']
         ));
     }
 
@@ -75,22 +96,31 @@ class descriptionManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $id = $data->prepare('INSERT INTO photo_projet(id_projet, url)
-                       VALUES(:id_projet, :url)');
+        $id = $data->prepare('INSERT INTO photo_projet(nom_projet, url)
+                       VALUES(:nom_projet, :url)');
 
         $id->execute(array(
-            ':id_projet' => $_GET['id_projet'],
+            ':nom_projet' => $_GET['nom_projet'],
             ':url' => $url,
         ));
+    }
+
+    public function returnNomProjet() {
+
+        $data = $this->dbConnect();
+
+        $rmi = $data->query('SELECT nom FROM projet');
+
+        return $rmi->fetch();
     }
 
     public function deleteProjet() {
 
         $data = $this->dbConnect();
 
-        $id = $data->prepare('DELETE FROM projet
+        $dp = $data->prepare('DELETE FROM projet
                        WHERE id=?');
-        $id->execute(array($_GET['id_projet']));
+        $dp->execute(array($_GET['id_projets']));
 
     }
 
@@ -99,8 +129,8 @@ class descriptionManager extends Manager {
         $data = $this->dbConnect();
 
         $id = $data->prepare('DELETE FROM photo_projet
-                       WHERE id_projet=?');
-        $id->execute(array($_GET['id_projet']));
+                       WHERE nom_projet=?');
+        $id->execute(array($_GET['nom_projet']));
 
     }
 
@@ -113,4 +143,14 @@ class descriptionManager extends Manager {
         $id->execute(array($_GET['id_photo']));
 
     }
+
+    public function compterProjets() {
+
+        $data = $this->dbConnect();
+
+        $nbr = $data->query('SELECT COUNT(id) as nombre_projet FROM projet');
+        return$nbr->fetch();
+    }
+
+
 }

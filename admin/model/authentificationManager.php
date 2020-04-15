@@ -24,6 +24,7 @@ class AuthentificationManager extends Manager {
 
         $idr->execute([ ":email" => $_POST['email'],
             ":mdp"   => $mdpCrypte]);
+
     }
 
     public function getEmail() {

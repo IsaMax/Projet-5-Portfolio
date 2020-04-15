@@ -1,31 +1,31 @@
-<span class="close"></span>
+<span class="close">x</span>
 
-<form id="formModif" method="POST" action="./projet5/index.php?action=parcours&amp;maj=true&amp;id_parcours=<?= $unParcours['id']; ?>">
+<form id="formModif" method="POST" action="index.php?action=parcours&amp;maj=true&amp;id_parcours=<?= $unParcours['id']; ?>">
 
     <div class="form-group">
         <label for="annee">Année</label>
-        <input type="text" name="annee" value="<?= $unParcours['annee']; ?>" required />
+        <input type="text" name="anneeMaj" value="<?= $unParcours['annee']; ?>" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label for="titre">Titre</label>
-        <input type="text" name="titre" value="<?= $unParcours['titre']; ?>" required />
+        <input type="text" name="titreMaj" value="<?= $unParcours['titre']; ?>" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label for="sous_titre">Sous-Titre</label>
-        <input type="text" name="sous_titre" value="<?= $unParcours['sous_titre']; ?>" required />
+        <input type="text" name="sous_titreMaj" value="<?= $unParcours['sous_titre']; ?>" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label for="bodyParcours">Description</label>
-        <textarea name="bodyParcours" id="addBodyParcours" required><?= $unParcours['body']; ?></textarea>
+        <textarea name="bodyParcoursMaj" id="addBodyParcoursSeul" class="form-control addBodyParcoursSeul" required><?= $unParcours['body']; ?></textarea>
     </div>
 
     <!--    <div class="group-input">-->
     <p>Icônes</p>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="etude" value="1"
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="iconeEtudeMaj" value="1"
             <?php
                 $etude = (int) $unParcours['iconeEtude'];
 
@@ -36,7 +36,7 @@
         <label class="form-check-label" for="inlineCheckbox1">Icône Étude</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="job" value="1" <?php
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="iconeJobMaj" value="1" <?php
         $etude = (int) $unParcours['iconeEtude'];
 
         if($unParcours['iconeJob'] == 1) {

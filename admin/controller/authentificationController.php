@@ -24,10 +24,11 @@ class AuthentificationController {
 
             foreach ($mdps as $mdp) {
 
-                if (password_verify($_POST['mdpco'], $mdp['mot_de_passe'])) {
+                if (password_verify($_POST['mdpco'], $mdp['password'])) {
                     $mdpOk = true;
                 }
             }
+
 
             // Si tout est identique on se connecte
             // Sinon on redirige vers connexion et on y affiche les erreurs
@@ -42,7 +43,7 @@ class AuthentificationController {
                 setcookie('id', $_SESSION['id'], time()+365*24*3600, null, null, false, true );
                 setcookie('email', $_POST['mailco'], time()+365*24*3600, null, null, false, true );
 
-                header('Location: accueil');
+                header('Location: dashboard');
             }
             else {
 
@@ -60,17 +61,20 @@ class AuthentificationController {
 
             $auth = new authentificationManager;
 
-            $auth->verificationEmail();
+            $nbrMail = $auth->verificationEmail();
 
-            if($nbrEmail['nbrEmail'] == NULL) {
+
+            if($nbrMail['nbrEmail'] == NULL) {
 
                 $mdpCrypte = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
 
+              
+
                 $auth->insererDonneesInscr($mdpCrypte);
-                header('Location: inscription');
+                header('Location: se-connecter');
             }
             else {
-                require 'vue/pageInscription.php';
+                throw new Exception('Ce mail existe déjà, veuillez vous connecter');
             }
         }
         else {

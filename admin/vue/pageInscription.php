@@ -21,14 +21,14 @@
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">Créez un compte</h3></div>
                             <div class="card-body">
 
-                                <form method="POST" action="./index.php?auth=connexion">
-                                    <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Entrez une adresse email" /></div>
+                                <form method="POST" action="index.php?auth=inscription">
+                                    <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" name="email" type="email" aria-describedby="emailHelp" placeholder="Entrez une adresse email" /></div>
                                     <div class="form-row">
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Mot de passe</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Mot de passe" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Mot de passe</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Mot de passe" name="mdp"/></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirmer Mot de passe</label><input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirmez mot de passe" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirmer Mot de passe</label><input class="form-control py-4" id="inputConfirmPassword" type="password" name="mdp" placeholder="Confirmez mot de passe" /></div>
                                         </div>
                                     </div>
                                     <div class="form-group mt-4 mb-0"><input type="submit" value="Créer un compte"></div>

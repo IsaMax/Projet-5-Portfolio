@@ -1,17 +1,18 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-#RewriteRule ^accueil$ index.php?action=accueil [L]
-#
-#RewriteRule ^commentaires$ index.php?action=commentaires [L]
-#RewriteRule ^messages$ index.php?action=messages [L]
-#
-#RewriteRule ^signalement$ index.php?action=signalement [L]
-#
-#RewriteRule ^nouveau-chapitre$ index.php?action=editer [L]
+RewriteRule ^dashboard$ index.php?action=dashboard [L]
+
+RewriteRule ^parcours$ index.php?action=parcours [L]
+
+RewriteRule ^messages$ index.php?action=messages [L]
+
+RewriteRule ^description$ index.php?action=description [L]
 
 RewriteRule ^se-connecter$ index.php?auth=connexion [L]
 
-#RewriteRule ^inscription$ index.php?auth=connexion&inscription [L]
-#
+RewriteRule ^inscription$ index.php?auth=inscription [L]
+
+RewriteRule ^deconnexion$ index.php?action=deconnecter [L]
+
 #RewriteRule ^edition/chapitre-([0-9]+)$ index.php?action=editer&chapitre={1}&etat=maj [L]

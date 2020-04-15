@@ -1,14 +1,14 @@
 <?php
 
 
-class descriptionManager extends Manager {
+class parcoursManager extends Manager {
 
     public function afficherLeParcours() {
 
         $data = $this->dbConnect();
 
-        $alp = $data->query('SELECT * FROM parcours WHERE id = ?');
-        $alp->execute(array($_GET['id_parcours']));
+        $alp = $data->prepare('SELECT * FROM parcours WHERE id = :id');
+        $alp->execute(array(':id' => $_GET['id_parcours']));
 
         return $alp->fetch();
     }
@@ -22,26 +22,29 @@ class descriptionManager extends Manager {
         return $gp->fetchAll();
     }
 
-    public function majParcours() {
+    public function majParcours($iconeJob, $iconeEtude) {
 
         $data = $this->dbConnect();
 
         $mp = $data->prepare('UPDATE parcours 
-                              SET titre = :titre, sous_titre = :sous_titre, body = :body, annee = :annee, icone_couverture = :icone
+                              SET titre = :titre, sous_titre = :sous_titre, body = :body, annee = :annee, iconeEtude = :iconeEtude, iconeJob = :iconeJob
                               WHERE id = :id');
 
         $mp->execute(array(
-                       ':titre' => $_POST['titre'],
-                        ':sous_titre' => $_POST['sous_titre'],
-                        ':body' => $_POST['body'],
-                        ':annee' => $_POST['anneeParcours'],
-                        ':icone' => $_POST['choixIcone'],
+                       ':titre' => $_POST['titreMaj'],
+                        ':sous_titre' => $_POST['sous_titreMaj'],
+                        ':body' => $_POST['bodyParcoursMaj'],
+                        ':annee' => $_POST['anneeMaj'],
+                        ':iconeEtude' => $iconeEtude,
+                        ':iconeJob' => $iconeJob,
                         ':id' => $_GET['id_parcours']
         ));
 
+
+
     }
 
-    public function saveNewParcours() {
+    public function saveNewParcours($iconeJob, $iconeEtude) {
 
         $data = $this->dbConnect();
 
@@ -52,10 +55,9 @@ class descriptionManager extends Manager {
             ':titre' => $_POST['titre'],
             ':sous_titre' => $_POST['sous_titre'],
             ':body' => $_POST['bodyParcours'],
-            ':annee' => $_POST['anneeParcours'],
-            ':iconeEtude' => $_POST['etude'],
-            ':iconeJob' => $_POST['job'],
-            ':id' => $_GET['id_parcours']
+            ':annee' => $_POST['annee'],
+            ':iconeEtude' => $iconeEtude,
+            ':iconeJob' => $iconeJob
         ));
 
     }

@@ -7,8 +7,7 @@ class descriptionManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $gp = $data->query('SELECT * FROM page_creation WHERE id_projet = ?');
-        $gp->execute(array($_GET['id_projet']));
+        $gp = $data->query('SELECT * FROM description');
 
         return $gp->fetch();
     }
@@ -17,7 +16,7 @@ class descriptionManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $cd = $data->query('SELECT COUNT(id) FROM description');
+        $cd = $data->query('SELECT COUNT(id) as nbrDesc FROM description');
 
         return $cd->fetch();
     }
