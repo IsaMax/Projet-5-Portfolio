@@ -10326,7 +10326,7 @@ form#formNouveauProjet {
 
 .photo-elt {
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   height: 100%;
 }
@@ -10343,6 +10343,7 @@ form#formNouveauProjet {
   box-shadow: 1px 0px 17px 6px #00000054;
   text-align: center;
   padding-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .bloc-description {

@@ -4,6 +4,6 @@ class homeController {
 
     public static function getHomepage() {
 
-        require 'view/homepageView.php';
+        require 'view/homePageView.php';
     }
 }

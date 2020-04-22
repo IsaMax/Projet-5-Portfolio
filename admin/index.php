@@ -13,7 +13,7 @@ try {
                 projetsController::afficherLesProjets();
                 messageController::compterMessage();
                 projetsController::compterLesProjets();
-
+                parcoursController::compterParcours();
                 break;
 
             case 'description':
@@ -143,7 +143,7 @@ try {
                             $_GET['id_projets'] = (int)$_GET['id_projets'];
 
                             if ($_GET['id_projets'] > 0) {
-                                
+
                                 projetsController::majProjet();
                                 header('Location: dashboard');
                             } else {

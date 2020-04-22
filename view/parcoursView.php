@@ -15,7 +15,7 @@ ob_start();
                 ?>
 
                 <li>
-                    <a href="#<?= htmlspecialchars($evenement['annee']) ?>" class="<?php if($i == 0) { echo 'active'; } ?>" data-annee="annee<?= htmlspecialchars($evenement['annee']) ?>"><?= htmlspecialchars($evenement['annee']) ?></a>
+                    <a href="#<?= htmlspecialchars($evenement['annee']) ?>" class="<?php if($i == 0) { echo 'active'; } if($i == 1) { echo 'suivant'; } ?>" data-annee="annee<?= htmlspecialchars($evenement['annee']) ?>"><?= htmlspecialchars($evenement['annee']) ?></a>
                 </li>
 
                 <?php
@@ -39,22 +39,27 @@ ob_start();
         <div id="annee<?= htmlspecialchars($evenement['annee']) ?>" class="container-desc <?php if($i == 0) { echo 'active'; } ?>">
             <div class="couverture">
 
-                <?php
-                    if($evenement['icone_couverture'] == 'etude') {
-                        echo '<i class="material-icons">school</i>';
-                    }
-                    elseif ($evenement['icone_couverture'] == 'job') {
-                        echo '<i class="material-icons">business_center</i>';
-                    }
-                    else {
-                        echo ' <i class="material-icons">school</i>
-                               <i class="material-icons">business_center</i>';
-                    }
-                ?>
+                <div class="div--material-icones">
 
+                    <?php
+                        if($evenement['iconeEtude'] == 1) {
+                            echo '<i class="material-icons">school</i>';
+
+                            if ($evenement['iconeJob'] == 1) {
+                                echo '<i class="icone-marge-droite"></i>';
+                            }
+                        }
+
+                        if ($evenement['iconeJob'] == 1) {
+                            echo '<i class="material-icons">business_center</i>';
+                        }
+                    ?>
+                </div>
+                <h2><?= $evenement['titre'] ?></h2>
+                <h3><?= $evenement['sous_titre'] ?></h3>
             </div>
             <div class="content">
-                <?= htmlspecialchars($evenement['body']); ?>
+                <?= $evenement['body']; ?>
             </div>
         </div>
 
@@ -75,4 +80,7 @@ $navbar2 = true;
 $titlePage = 'Parcours scolaire et professionnel de Maxime Isambert, développeur Drupal 8, Wordpress, PHP, Javascript, développeur Front-End';
 $cheminFichierCss = 'parcours.css';
 $cheminFichierJs = 'parcours.js';
+$classDuBody = 'body--parcours';
+
+require 'template.php';
 ?>

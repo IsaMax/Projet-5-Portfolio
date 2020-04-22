@@ -6,48 +6,50 @@ ob_start();
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Dashboard</li>
 </ol>
-
-<div class="row">
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body"><?php
-                if(!empty($nombreProjet)) {
-                    $nombreProjet['nombre_projet'];
-                } else {
-                    echo '0';
-                }?> Projets réalisés</div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-            <div class="card-body"><?php
-                if(!empty($nombreMessage)) {
-                    $nombreMessage['nombre_message'];
-                } else {
-                    echo '0';
-                }?> Messages</div>
-
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-success text-white mb-4">
-            <div class="card-body">Success Card</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card bg-danger text-white mb-4">
-            <div class="card-body">Danger Card</div>
-            <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">View Details</a>
-                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-            </div>
-        </div>
-    </div>
-</div>
+<!---->
+<!--<div class="row">-->
+<!--    <div class="col-xl-3 col-md-6">-->
+<!--        <div class="card bg-primary text-white mb-4">-->
+<!--            <div class="card-body">--><?php
+//                if(!empty($nombreProjet)) {
+//                    $nombreProjet['nombre_projet'];
+//                } else {
+//                    echo '0';
+//                }?><!-- Projets réalisés</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="col-xl-3 col-md-6">-->
+<!--        <div class="card bg-primary text-white mb-4">-->
+<!--            <div class="card-body">--><?php
+//                if(!empty($nombreMessage)) {
+//                    $nombreMessage['nombre_message'];
+//                } else {
+//                    echo '0';
+//                }?><!-- Messages</div>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="col-xl-3 col-md-6">-->
+<!--        <div class="card bg-primary text-white mb-4">-->
+<!--            <div class="card-body">--><?php
+//                if(!empty($nombreParcours)) {
+//                    $nombreParcours['nombre_parcours'];
+//                } else {
+//                    echo '0';
+//                }?><!-- Parcours enregistrés</div>-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="col-xl-3 col-md-6">-->
+<!--        <div class="card bg-danger text-white mb-4">-->
+<!--            <div class="card-body">Danger Card</div>-->
+<!--            <div class="card-footer d-flex align-items-center justify-content-between">-->
+<!--                <a class="small text-white stretched-link" href="#">View Details</a>-->
+<!--                <div class="small text-white"><i class="fas fa-angle-right"></i></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div class="row">
     <div class="col-xl-6">
@@ -113,7 +115,7 @@ ob_start();
                         <?= substr(htmlspecialchars($projet['url']), 0, 100); ?>
                     </div>
                     <div class="bloc-description">
-                        <?= substr(htmlspecialchars($projet['categorie']), 0, 100); ?>
+                        <?= substr(htmlspecialchars(str_replace('-', ' ',$projet['categorie'])), 0, 100); ?>
                     </div>
 
                     <div class="bloc-description">

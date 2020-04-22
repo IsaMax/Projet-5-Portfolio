@@ -48,11 +48,10 @@ class projetsManager extends Manager {
         $data = $this->dbConnect();
 
         $mp = $data->prepare('UPDATE projet 
-                              SET nom = :nom, description = :description, url = :url, categorie = :categorie, nom_projet_encode = :nom_projet_encode
+                              SET description = :description, url = :url, categorie = :categorie, nom_projet_encode = :nom_projet_encode
                               WHERE id = :id');
 
         $mp->execute(array(
-            ':nom' => $_POST['nom'],
             ':description' => $_POST['bodyProjet'],
             ':url' => $_POST['url'],
             ':categorie' => $_POST['categorie'],

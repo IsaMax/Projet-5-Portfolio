@@ -85,7 +85,7 @@ window.addEventListener('load', function() {
     //On récupère avec ajax le formulaire de la page projetView.php que l'on insère dans la page dashboardView.php
 
     var editionProjet = document.querySelectorAll('.editerProjet');
-    var divForm = document.getElementById('FormJsProjet');
+    var divForm2 = document.getElementById('FormJsProjet');
 
     for(var i = 0 ; i < editionProjet.length ; i++) {
 
@@ -100,11 +100,11 @@ window.addEventListener('load', function() {
             console.log('index.php?action=projets&modifier=true&id_projets='+id+'&nom_projet='+nomEncode)
             loadAjax('index.php?action=projets&modifier=true&id_projets='+id+'&nom_projet='+nomEncode, afficherAjax);
 
-            divForm.style.zIndex = '50';
-            divForm.style.opacity = '1';
+            divForm2.style.zIndex = '50';
+            divForm2.style.opacity = '1';
 
             function afficherAjax(reponse) {
-                divForm.innerHTML = reponse;
+                divForm2.innerHTML = reponse;
                 lanceTinyMCEProjet();
 
                 // On vide le formulaire et on ferme la fenêtre
@@ -112,10 +112,12 @@ window.addEventListener('load', function() {
 
                     document.getElementById('formModifProjet').reset();
 
-                    divForm.style.zIndex = '-1';
-                    divForm.style.opacity = '0';
+                    divForm2.style.zIndex = '-1';
+                    divForm2.style.opacity = '0';
                     tinyMCE.remove();
                 });
+                
+                
 
                 // On envoie le formulaire du parcours modifié via le bouton
                 document.getElementById('submitModifProjet').addEventListener('click', function (ev) {
@@ -177,10 +179,5 @@ window.addEventListener('load', function() {
 
         xhr.send(null);
     }
-
- 
-
-        //document.getElementById('formNouveauProjet').setAttribute('action', 'index.php?action=projets&amp;nom_projet=');
-
 
 });

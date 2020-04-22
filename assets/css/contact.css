@@ -1,81 +1,3 @@
-
-nav.second-menu {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 5rem 0 5rem;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-nav.second-menu .bloc-droit {
-    display: flex;
-    list-style-type: none;
-    padding-left: 0;
-}
-
-nav.second-menu .bloc-droit a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-}
-
-nav.second-menu .bloc-droit a:after{
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: #eb2d0e;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    transform: scale(0);
-    transform-origin: center;
-    transition: transform .3s;
-}
-
-nav.second-menu .bloc-droit a:hover:after {
-    transform: scale(1);
-}
-
-
-.second-menu > div {
-    position: relative;
-}
-
-.second-menu .hover {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-}
-
-nav.second-menu .bloc-droit li:not(:last-child) {
-    margin-right: 1.6rem;
-}
-
-.second-menu .default .home-item, .second-menu .hover .home-item {
-    font-weight: bold;
-    background-image: linear-gradient(31deg, #e80c0c -2%, #f5b312);
-    font-size: 1.2em;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    font-family: 'Permanent Marker', cursive;
-    opacity: 1;
-    transition: all .3s;
-}
-
-.second-menu .hover .home-item {
-
-    background-image: linear-gradient(45deg, #f5b312 -10%,#e80c0c );
-    opacity: 1;
-    transition: all .5s;
-}
-
-.second-menu .default .home-item:hover {
-    opacity: 0;
-}
-
-
 :root {
     --base1: #EBEFF3;
     --base2: #C3D0DB;
@@ -158,7 +80,7 @@ body {
     color: var(--baseDark2);
     height: calc(100vh - 85px);
 }
-input, textarea {
+input:not([type=checkbox]), textarea {
     width: 100%;
     border-radius: 10px;
     min-height: 30px;
@@ -171,6 +93,24 @@ input, textarea {
     transition: var(--shadow-transition);
     color: var(--base3);
 }
+
+.body--contact {
+    min-height: 1008px;
+}
+
+.group.chekbox {
+    display: flex;
+}
+
+.group.chekbox label {
+    position: relative;
+}
+
+input#chekbox {
+    align-self: center;
+    display: block;
+}
+
 .send input {
     border-radius: 10px;
     padding: 10px 15px;
@@ -211,8 +151,10 @@ input, textarea {
     transition: all 0.25s linear;
 }
 
-.container-contact input:focus:enabled,
-.container-contact input:active:enabled, .container-contact textarea:active:enabled,
+.container-contact input:focus:enabled:not([type=checkbox]),
+.container-contact input.active:not([type=checkbox]),
+.container-contact textarea.active,
+.container-contact input:active:enabled:not([type=checkbox]), .container-contact textarea:active:enabled,
 .container-contact textarea:focus:enabled {
     outline: none;
     color: var(--baseDark2);
@@ -220,26 +162,41 @@ input, textarea {
     box-shadow: var(--input-shadow-active);
 }
 
-.container-contact input:focus:enabled + label,
-.container-contact input:active:enabled + label,
+.container-contact input:focus:enabled:not([type=checkbox]) + label,
+.container-contact input.active:not([type=checkbox]) + label,
+.container-contact input:active:enabled:not([type=checkbox]) + label,
 .container-contact textarea:active:enabled + label,
+.container-contact textarea.active + label,
 .container-contact textarea:focus:enabled + label {
     -webkit-transform: translateY(-34px) scale(0.9);
     transform: translateY(-34px) scale(0.9);
     font-weight: 600;
 }
+
 .container-contact {
-    width: 20%;
     width: 100%;
     display: flex;
     height: 87%;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
-.container-contact form {
-    width: 20%;
+.success {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background: #73dc73;
+    padding: 1rem;
+    font-size: 1.2em;
+    display: none;
 }
+
+[type=checkbox]:hover {
+    cursor: pointer;
+}
+
 
 .container-contact .group {
     margin-bottom: 2rem;
@@ -253,14 +210,11 @@ input, textarea {
 }
 
 .container-contact form {
-    width: 20%;
+    max-width: 600px;
 }
 
 .container-contact .group {
     margin-bottom: 2rem;
-}
-
-.infos-contact {
 }
 
 * {
@@ -311,7 +265,7 @@ textarea {
 }
 
 .infos-contact .tel {
-    transform: translateX(-50%);
+    transform: translateX(50%);
     opacity: 0;
 }
 

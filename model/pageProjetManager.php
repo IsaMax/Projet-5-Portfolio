@@ -7,19 +7,16 @@ class pageProjetManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $gp = $data->query('SELECT * FROM page_creation WHERE id_projet = ?');
-        $gp->execute(array($_GET['id_projet']));
 
-        return $gp->fetch();
-    }
-
-    public function getPhotos() {
-
-        $data = $this->dbConnect();
-
-        $gp = $data->query('SELECT * FROM photo_projet WHERE id_projet = ?');
+        $gp = $data->prepare('SELECT * FROM photo_projet
+                            INNER JOIN projet
+                            ON photo_projet.nom_projet = projet.nom_projet_encode
+                            WHERE projet.id = ?
+                          
+                           ');
         $gp->execute(array($_GET['id_projet']));
 
         return $gp->fetchAll();
+
     }
 }

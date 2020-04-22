@@ -2,12 +2,12 @@
 
 // Une table description avec les 3 premiers paragraphes et une competence
 
-class homeManager extends Manager {
+class parcoursManager extends Manager {
 
     public function getEvenements() {
 
         $data = $this->dbConnect();
-        $ge = $data->query('SELECT *  FROM parcours');
+        $ge = $data->query('SELECT *  FROM parcours ORDER BY annee');
         return $ge->fetchAll();
     }
 

@@ -8,8 +8,6 @@ class pageProjetController {
 
         $page = $data->getPage();
 
-        $photos = $data->getPhotos();
-
         require 'view/pageProjetView.php';
     }
 }

@@ -1,0 +1,412 @@
+
+/*      ******** MENU 1 ********      */
+
+
+.main-menu {
+    position: absolute;
+    bottom: -10%;
+    z-index: 21;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, 0);
+    opacity: 0;
+
+}
+
+.main-menu .wrapper-circle {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+
+.main-menu .circle {
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    background-color:#fcfbff;
+    box-shadow:-3px 0px 11px 2px rgba(12, 10, 10, 0.14),
+    3px 0px 12px 9px rgba(12, 10, 10, 0.15),
+    -4px 0px 12px 10px rgba(12, 10, 10, 0.13);
+    transform: translate(0, 50%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main-menu .circle::before {
+    content: "+";
+    position: absolute;
+    color: red;
+    top: 16%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+    font-size: 3em;
+    transition: transform .5s;
+}
+
+.main-menu .circle::after {
+    content: "_";
+    position: absolute;
+    color: red;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+    font-size: 3em;
+    transition: transform .5s;
+}
+
+.main-menu .circle:hover::before {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.main-menu ul {
+    list-style-type: none;
+}
+
+.main-menu [class^='wrapper-sub-menu'] {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom;
+    height: 310px;
+    z-index: 4;
+    filter: drop-shadow(5px 10px 10px rgba(46, 46, 38, 0.315));
+    transform: translate(-50%, 100%) rotate(0deg);
+}
+
+.main-menu .wrapper-sub-menu-home { z-index: 6; }
+
+
+.main-menu .sub-menu {
+    position: relative;
+    width: 110px;
+    height: 210px;
+    background-color: #f8f8f8;
+    border: 1px solid #dadada;
+    clip-path: polygon(24% 8%,0 100%,89% 100%,78% 8%);
+    z-index: 11;
+
+    transform: rotate(180deg) scale(1);
+    transition: transform .2s;
+}
+
+.sub-menu a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.sub-menu:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.sub-menu::before {
+    position: absolute;
+    color: #ff5851;
+    text-shadow:1px -1px 1px rgb(4, 4, 4);
+    font-size: 2em;
+    letter-spacing: 1px;
+    width: 200px;
+
+    transform: rotate(91deg);
+    top:59%;
+    left: -44%;
+
+    transition: all .2s;
+}
+
+.sub-menu:hover::before {
+    text-shadow: -1px 1px 1px rgb(4, 4, 4);
+}
+
+.sub-menu.cv::before {
+    content: "Parcours";
+}
+
+.sub-menu.desc::before {
+    content: "A propos";
+}
+
+.sub-menu.home::before {
+    content: "Accueil";
+}
+
+.sub-menu.portfolio::before {
+    content: "Créations";
+}
+
+.sub-menu.contact::before {
+    content: "Contact";
+}
+
+.wrapper-jesuis {
+    opacity: 0;
+    position: absolute;
+    z-index: 11;
+    top: 60%;
+    left: 27%;
+    font-size: 2em;
+}
+
+.wrapper-jesuis .textChange {
+    color: #FFF;
+}
+
+.a-propos strong::before {
+    content: "";
+    background: #0088fd78;
+    width: 90%;
+    height: 15px;
+    position: absolute;
+    top: 11px;
+    right: -5px;
+    z-index: -1;
+    transform-origin: left;
+    transform: scale(0);
+    transition: transform .5s .5s;
+}
+
+.a-propos p:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.a-propos strong {
+    position: relative;
+}
+
+.a-propos strong.active:first-child::before {
+    transition-delay: .2s;
+    transform: scale(1);
+}
+
+.a-propos strong.active:last-child::before {
+    transition-delay: .2s;
+    transform: scale(1);
+}
+
+.a-propos strong.active:nth-child(1)::before {
+    transition-delay: .4s;
+    transform: scale(1);
+}
+
+.a-propos strong.active:nth-child(2)::before {
+    transition-delay: .6s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(3)::before {
+    transition-delay: .8s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(4)::before {
+    transition-delay: 1s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(5)::before {
+    transition-delay: 1.2s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(6)::before {
+    transition-delay: 1.4s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(7)::before {
+    transition-delay: 1.6s;
+    transform: scale(1);
+}
+.a-propos strong.active:nth-child(8)::before {
+    transition-delay: 1.8s;
+    transform: scale(1);
+}
+
+
+/****** DEUXIEME MENU ******/
+
+nav.second-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem 0 5rem;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+nav.second-menu .bloc-droit li.active a:after {
+    transform: scale(1);
+}
+
+nav.second-menu .bloc-droit {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+nav.second-menu .bloc-droit a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+nav.second-menu .bloc-droit a:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #eb2d0e;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform .3s;
+}
+
+nav.second-menu .bloc-droit a:hover:after {
+    transform: scale(1);
+}
+
+.second-menu > div {
+    position: relative;
+}
+
+.second-menu .hover {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+nav.second-menu .bloc-droit li:not(:last-child) {
+    margin-right: 1.6rem;
+}
+
+.second-menu .default .home-item, .second-menu .hover .home-item {
+    font-weight: bold;
+    background-image: linear-gradient(31deg, #e80c0c -2%, #f5b312);
+    font-size: 1.2em;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: 'Permanent Marker', cursive;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.second-menu .hover .home-item {
+
+    background-image: linear-gradient(45deg, #f5b312 -10%,#e80c0c );
+    opacity: 1;
+    transition: all .5s;
+}
+
+.second-menu .default .home-item:hover {
+    opacity: 0;
+}
+
+/** MENU 2 responsive **/
+
+
+.btn-hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: red;
+    transform: rotate(0) translateY(0);
+    opacity: 1;
+    transition: all .3s;
+}
+
+.btn-hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    display: none;
+    z-index: 60;
+}
+
+.btn-hamburger span:nth-child(2) {
+    margin: 7px 0;
+}
+
+.btn-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.btn-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+.btn-hamburger.active ~ .bloc-droit a {
+    color: black !important;
+}
+
+@media all and (max-width: 750px) {
+
+    .overflow {
+        overflow: hidden;
+    }
+
+    .second-menu .btn-hamburger {
+        display: block;
+    }
+
+    .bloc-droit {
+        right: 110vw;
+        z-index: 10;
+    }
+
+    .bloc-droit li {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    nav.second-menu .bloc-droit {
+        position: absolute;
+        background: white;
+        top: 0;
+        right:110vw;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav.second-menu .bloc-droit li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    ul.bloc-droit li:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+
+    ul.bloc-droit a {
+        font-size: 3rem;
+        color: black !important;
+    }
+}
+
+@media all and (max-width: 380px) {
+
+    nav.second-menu {
+        justify-content: space-between;
+        padding: 2rem 3rem 0 3rem;
+    }
+}
+
+@media all and (max-width: 360px) {
+
+    ul.bloc-droit a {
+        font-size: 2rem;
+    }
+}
+
+

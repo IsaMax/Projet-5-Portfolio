@@ -1,6 +1,6 @@
 <?php
 
-class homeController {
+class aProposController {
 
     public static function getDescription() {
 

@@ -2,7 +2,7 @@
 
 // Une table description avec les 3 premiers paragraphes et une competence
 
-class homeManager extends Manager {
+class aProposManager extends Manager {
 
     public function getDescription() {
 

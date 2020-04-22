@@ -2,3 +2,17 @@ Options +FollowSymlinks
 RewriteEngine on
 
 RewriteRule ^accueil$ index.php?action=accueil [L]
+
+RewriteRule ^a-propos$ index.php?action=a-propos [L]
+
+RewriteRule ^parcours$ index.php?action=parcours [L]
+
+RewriteRule ^projets$ index.php?action=creations&categorie=all [L]
+
+RewriteRule ^projets-([a-zA-Z1-9\-]+)$ index.php?action=creations&categorie=$1 [L]
+
+RewriteRule ^contact$ index.php?action=contact [L]
+
+RewriteRule ^([a-zA-Z1-9\-]+)$ index.php?action=$1 [L]
+
+RewriteRule ^projets-([a-zA-Z1-9\-]+)-([a-zA-Z1-9\-_]+)-([1-9]+)$ index.php?action=page_creation&categorie=$1&nom_projet=$2&id_projet=$3 [L]

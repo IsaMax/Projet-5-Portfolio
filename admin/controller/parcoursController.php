@@ -75,4 +75,11 @@ class parcoursController {
 
         $data->deleteParcours();
     }
+
+    public static function compterParcours() {
+
+        $data = new parcoursManager();
+
+        $nombreParcours = $data->compterParcours();
+    }
 }

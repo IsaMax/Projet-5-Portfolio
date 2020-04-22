@@ -1,6 +1,6 @@
 <?php
 
-class homeController {
+class parcoursController {
 
     public static function getParcours() {
 

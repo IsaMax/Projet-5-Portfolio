@@ -1,5 +1,10 @@
 window.addEventListener('load', function() {
 
+    if(!deuxiemePageActive) {
+
+        document.querySelector('body').classList.add('body--premiere-page')
+    }
+
   //  gsap.registerPlugin(TextPlugin);
 
     /* Animation MENU */
@@ -58,6 +63,7 @@ window.addEventListener('load', function() {
         duration: .6
     });
 
+
     var pathIsambert = document.querySelectorAll('#isambert g path');
     var pathMaxime = document.querySelectorAll('#maxime g path');
 
@@ -76,18 +82,26 @@ window.addEventListener('load', function() {
         });
 
         gsap.to('.block-red.av',{
-            width: (window.innerWidth/2),
+            width: '50vw',
             delay:1,
             duration:.7,
             ease: Power3.easeInOut
         });
 
-        gsap.to('.section-intro', {
+        if(window.outerWidth > 1100 || document.querySelector('body').classList.contains('body--premiere-page')) {
 
-            scale: .93,
-            duration:.7,
-            delay: 1.4,
-        });
+             if(window.outerWidth > 900) {
+                 gsap.to('.section-intro', {
+
+                     scale: .93,
+                     duration:.7,
+                     delay: 1.4,
+                 });
+
+             }
+
+        }
+
 
         window.setTimeout(function() {
             for(var i=0 ; i < pathIsambert.length ; i++) {
@@ -122,12 +136,38 @@ window.addEventListener('load', function() {
             });
         }, 3400);
 
-        gsap.to('.scroll', { opacity:1, delay:4});
-        
-        if(!deuxiemePageActive) {
-            gsap.to('.wrapper-jesuis', { opacity:1, delay:5, left:'26%' });
-        }
 
+        if(window.outerWidth > 550)
+            gsap.to('.scroll', { opacity:1, delay:4});
+
+        if(!deuxiemePageActive) {
+
+            var lg = window.outerWidth;
+            var left = '44.2%';
+
+            if(lg > 1722) { left = '44.2%'; }
+            else if(lg <= 1722 && lg > 1595) { left = '43%'; }
+            else if(lg <= 1595 && lg > 1440) { left = '42.3%'; }
+            else if(lg <= 1440 && lg > 1300) { left = '41.5%'; }
+            else if(lg <= 1300 && lg > 1180) { left = '40.8%'; }
+            else if(lg <= 1180 && lg > 1082) { left = '39.8%'; }
+            else if(lg <= 1082 && lg > 992) { left = '39%'; }
+            else if(lg <= 992 && lg > 908) { left = '37.8%'; }
+            else if(lg <= 908 && lg > 822) { left = '36.7%'; }
+            else if(lg <= 822 && lg > 756) { left = '35.5%'; }
+            else if(lg <= 756 && lg > 685) { left = '38%'; }
+            else if(lg <= 685 && lg > 630) { left = '37%'; }
+            else if(lg <= 630 && lg > 575) { left = '35%'; }
+            else if(lg <= 575 && lg > 508) { left = '36%'; }
+            else if(lg <= 508 && lg > 466) { left = '34.5%'; }
+            else if(lg <= 466 && lg > 425) { left = '37%'; }
+            else if(lg <= 425 && lg > 388) { left = '35.7%'; }
+            else if(lg <= 388 && lg > 354) { left = '34.5%'; }
+            else if(lg <= 354 && lg > 326) { left = '33.9%'; }
+
+            gsap.to('.wrapper-jesuis', { opacity:1, delay:5, left: left });
+
+        }
 
         var text = document.querySelector(".textChange");
         var tl = new TimelineMax({repeat:-1, yoyo:false, repeatDelay:2, delay:5});
@@ -140,6 +180,7 @@ window.addEventListener('load', function() {
         tl.to(text, 0.8, {text:{value:"Proactif", padSpace:true, type:'diff', ease:Linear.easeNone},delay:2, speed: 3});
 
     }
+
 
     /*      ****** FIN PREMIER SLIDE ******* */
 
@@ -159,8 +200,13 @@ window.addEventListener('load', function() {
 
                 document.querySelector(target).innerHTML =  xhr.responseText; // Et on affiche !
 
-                if(url === 'https://'+window.location.hostname+'/projet5/aPropos.php')
+                if(url === 'https://'+window.location.hostname+'/projet5/a-propos') {
+
+                    if(window.outerWidth <= 1002) {
+                        document.querySelector('body').style.overflow = 'visible';
+                    }
                     executeJSApropos();
+                }
             }
         });
 
@@ -170,7 +216,7 @@ window.addEventListener('load', function() {
         document.querySelector('.sub-menu.desc a').addEventListener('click', function(e) {
             e.preventDefault();
 
-            loadAjax('https://'+window.location.hostname+'/projet5/aPropos.php','.section-intro');
+            loadAjax('https://'+window.location.hostname+'/projet5/a-propos','.section-intro');
         });
 
     var deuxiemePageActive = false;
@@ -191,21 +237,25 @@ window.addEventListener('load', function() {
                 t3.to(blockRouge, {top: '150%'});
 
                 window.setTimeout(function() {
-                    loadAjax('https://'+window.location.hostname+'/projet5/aPropos.php', '.section-intro');
+                    loadAjax('https://'+window.location.hostname+'/projet5/a-propos', '.section-intro');
                 }, 1800)
             }
 
             else if(e.deltaY < 0) {
 
-                deuxiemePageActive = false;
-                t2.timeScale(2);
-                t2.reverse();
+                if(window.outerWidth > 1002) {
 
-                window.setTimeout(function() {
+                    deuxiemePageActive = false;
+                    t2.timeScale(2);
+                    t2.reverse();
 
-                    window.location.href = 'https://maxime.agences.tw/projet5';
+                    window.setTimeout(function() {
 
-                }, 2500);
+                        window.location.href = 'https://maxime.agences.tw/projet5';
+
+                    }, 2500);
+                }
+
             }
    });
 
@@ -214,12 +264,15 @@ window.addEventListener('load', function() {
         var blockRouge = document.querySelector('.section-intro .block-red');
 
         //if(document.querySelector('.wrapper-jesuis').style.opacity == '1') {
+        document.querySelector('body').classList.remove('body--premiere-page');
+        document.querySelector('body').classList.add('body--second-page');
 
-        t2.to(".a-propos div", {
-            opacity: 1,
-            scale: 1,
-            duration:.8,
-            stagger: { each: .2, ease: 'bounce.out' }
+        t2.to(".a-propos p", {
+            opacity:1,
+            y:0,
+            stagger:.1,
+            duration: 1.5,
+            ease: 'expo.out',
         })
         .to("section.section-intro h3", { opacity: 1 })
         .to('.logo img', {
@@ -242,20 +295,22 @@ window.addEventListener('load', function() {
             scale: 1,
             opacity: 1,
         })
-        .to('.scroll', { opacity:1});
+        .to('.scroll', { opacity:0});
 
         window.setTimeout(function () {
-            var temp1 = document.querySelectorAll('.a-propos .desc1 strong');
-            var temp2 = document.querySelectorAll('.a-propos .desc2 strong');
-            var temp3 = document.querySelectorAll('.a-propos .desc3 strong');
-            console.log(temp3)
-            for (var i = 0; i < 3; i++) {
+            var temp1 = document.querySelectorAll('.a-propos strong');
+            // var temp2 = document.querySelectorAll('.a-propos .desc2 strong');
+            // var temp3 = document.querySelectorAll('.a-propos .desc3 strong');
+            console.log(temp1)
+            for (var i = 0; i < temp1.length; i++) {
 
                 temp1[i].classList.add('active');
-                temp2[i].classList.add('active');
-                temp3[i].classList.add('active');
+                // temp2[i].classList.add('active');
+                // temp3[i].classList.add('active');
             }
         },4000);
+
+
 
         compteCompetences();
 

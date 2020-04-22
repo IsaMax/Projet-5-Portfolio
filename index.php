@@ -29,7 +29,7 @@ try {
                     creationsController::getCreations();
                 }
                 else {
-                    header('Location= action=creations&categorie=all');
+                    header('Location: projets');
                 }
                 break;
 
@@ -43,12 +43,12 @@ try {
                 break;
 
             case 'contact':
-                if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['sujet']) && isset($_POST['contenu'])) {
+                if(isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['objet']) && isset($_POST['message'])) {
 
                     contactController::postMessage();
                 }
                 else {
-                    require 'view/contact/contactView.php';
+                    contactController::afficherMessage();
                 }
                 break;
 
@@ -64,5 +64,4 @@ catch(Exception $erreur) {
 
     erreurController::afficheErreur($erreur->getMessage());
 
-    /*  header('Location: index.php?action=erreur&erreur='.$erreur->getMessage());*/
 }

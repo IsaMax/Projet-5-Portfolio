@@ -39,9 +39,6 @@ class parcoursManager extends Manager {
                         ':iconeJob' => $iconeJob,
                         ':id' => $_GET['id_parcours']
         ));
-
-
-
     }
 
     public function saveNewParcours($iconeJob, $iconeEtude) {
@@ -69,6 +66,15 @@ class parcoursManager extends Manager {
         $id = $data->prepare('DELETE FROM parcours
                        WHERE id=?');
         $id->execute(array($_GET['id_parcours']));
+
+    }
+
+    public function compterParcours() {
+
+        $data = $this->dbConnect();
+
+        $nbr = $data->query('SELECT COUNT(id) as nombre_parcours FROM parcours');
+        return $nbr->fetch();
 
     }
 
