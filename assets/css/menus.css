@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 
 /*      ******** MENU 1 ********      */
 
@@ -9,6 +11,8 @@
     left: 50%;
     width: 180px;
     height: 180px;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
     opacity: 0;
 
@@ -27,9 +31,14 @@
     width: 100%;
     height: 100%;
     background-color:#fcfbff;
+    -webkit-box-shadow:-3px 0px 11px 2px rgba(12, 10, 10, 0.14),
+    3px 0px 12px 9px rgba(12, 10, 10, 0.15),
+    -4px 0px 12px 10px rgba(12, 10, 10, 0.13);
     box-shadow:-3px 0px 11px 2px rgba(12, 10, 10, 0.14),
     3px 0px 12px 9px rgba(12, 10, 10, 0.15),
     -4px 0px 12px 10px rgba(12, 10, 10, 0.13);
+    -webkit-transform: translate(0, 50%);
+    -ms-transform: translate(0, 50%);
     transform: translate(0, 50%);
     border-radius: 50%;
     cursor: pointer;
@@ -41,9 +50,15 @@
     color: red;
     top: 16%;
     left: 50%;
+    -webkit-transform: translateX(-50%) rotate(0);
+    -ms-transform: translateX(-50%) rotate(0);
     transform: translateX(-50%) rotate(0);
     font-size: 3em;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
     transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
 }
 
 .main-menu .circle::after {
@@ -52,12 +67,20 @@
     color: red;
     bottom: 25%;
     left: 50%;
+    -webkit-transform: translateX(-50%) rotate(0);
+    -ms-transform: translateX(-50%) rotate(0);
     transform: translateX(-50%) rotate(0);
     font-size: 3em;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
     transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
 }
 
 .main-menu .circle:hover::before {
+    -webkit-transform: translateX(-50%) rotate(180deg);
+    -ms-transform: translateX(-50%) rotate(180deg);
     transform: translateX(-50%) rotate(180deg);
 }
 
@@ -69,10 +92,15 @@
     position: absolute;
     bottom: 0;
     left: 50%;
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
     transform-origin: bottom;
     height: 310px;
     z-index: 4;
+    -webkit-filter: drop-shadow(5px 10px 10px rgba(46, 46, 38, 0.315));
     filter: drop-shadow(5px 10px 10px rgba(46, 46, 38, 0.315));
+    -webkit-transform: translate(-50%, 100%) rotate(0deg);
+    -ms-transform: translate(-50%, 100%) rotate(0deg);
     transform: translate(-50%, 100%) rotate(0deg);
 }
 
@@ -81,15 +109,25 @@
 
 .main-menu .sub-menu {
     position: relative;
+    display: block;
     width: 110px;
     height: 210px;
     background-color: #f8f8f8;
     border: 1px solid #dadada;
+    -webkit-clip-path: polygon(24% 8%,0 100%,89% 100%,78% 8%);
     clip-path: polygon(24% 8%,0 100%,89% 100%,78% 8%);
     z-index: 11;
 
+    -webkit-transform: rotate(180deg) scale(1);
+
+    -ms-transform: rotate(180deg) scale(1);
+
     transform: rotate(180deg) scale(1);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
     transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
 }
 
 .sub-menu a::before {
@@ -102,6 +140,8 @@
 }
 
 .sub-menu:hover {
+    -webkit-transform: rotate(180deg) scale(1.1);
+    -ms-transform: rotate(180deg) scale(1.1);
     transform: rotate(180deg) scale(1.1);
 }
 
@@ -113,9 +153,17 @@
     letter-spacing: 1px;
     width: 200px;
 
+    -webkit-transform: rotate(91deg);
+
+    -ms-transform: rotate(91deg);
+
     transform: rotate(91deg);
     top:59%;
     left: -44%;
+
+    -webkit-transition: all .2s;
+
+    -o-transition: all .2s;
 
     transition: all .2s;
 }
@@ -166,9 +214,17 @@
     top: 11px;
     right: -5px;
     z-index: -1;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
     transform-origin: left;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
+    -webkit-transition: -webkit-transform .5s .5s;
+    transition: -webkit-transform .5s .5s;
+    -o-transition: transform .5s .5s;
     transition: transform .5s .5s;
+    transition: transform .5s .5s, -webkit-transform .5s .5s;
 }
 
 .a-propos p:not(:last-child) {
@@ -180,46 +236,86 @@
 }
 
 .a-propos strong.active:first-child::before {
+    -webkit-transition-delay: .2s;
+    -o-transition-delay: .2s;
     transition-delay: .2s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
 .a-propos strong.active:last-child::before {
+    -webkit-transition-delay: .2s;
+    -o-transition-delay: .2s;
     transition-delay: .2s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
 .a-propos strong.active:nth-child(1)::before {
+    -webkit-transition-delay: .4s;
+    -o-transition-delay: .4s;
     transition-delay: .4s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
 .a-propos strong.active:nth-child(2)::before {
+    -webkit-transition-delay: .6s;
+    -o-transition-delay: .6s;
     transition-delay: .6s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(3)::before {
+    -webkit-transition-delay: .8s;
+    -o-transition-delay: .8s;
     transition-delay: .8s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(4)::before {
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
     transition-delay: 1s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(5)::before {
+    -webkit-transition-delay: 1.2s;
+    -o-transition-delay: 1.2s;
     transition-delay: 1.2s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(6)::before {
+    -webkit-transition-delay: 1.4s;
+    -o-transition-delay: 1.4s;
     transition-delay: 1.4s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(7)::before {
+    -webkit-transition-delay: 1.6s;
+    -o-transition-delay: 1.6s;
     transition-delay: 1.6s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 .a-propos strong.active:nth-child(8)::before {
+    -webkit-transition-delay: 1.8s;
+    -o-transition-delay: 1.8s;
     transition-delay: 1.8s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -227,7 +323,11 @@
 /****** DEUXIEME MENU ******/
 
 nav.second-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 2rem 5rem 0 5rem;
     font-family: 'Roboto', sans-serif;
@@ -237,10 +337,14 @@ nav.second-menu {
 }
 
 nav.second-menu .bloc-droit li.active a:after {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
 nav.second-menu .bloc-droit {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     list-style-type: none;
     padding-left: 0;
@@ -260,12 +364,22 @@ nav.second-menu .bloc-droit a:after{
     position: absolute;
     bottom: -2px;
     left: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
     transform-origin: center;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
 }
 
 nav.second-menu .bloc-droit a:hover:after {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -285,6 +399,7 @@ nav.second-menu .bloc-droit li:not(:last-child) {
 
 .second-menu .default .home-item, .second-menu .hover .home-item {
     font-weight: bold;
+    background-image: -o-linear-gradient(59deg, #e80c0c -2%, #f5b312);
     background-image: linear-gradient(31deg, #e80c0c -2%, #f5b312);
     font-size: 1.2em;
     color: transparent;
@@ -292,13 +407,19 @@ nav.second-menu .bloc-droit li:not(:last-child) {
     -webkit-background-clip: text;
     font-family: 'Permanent Marker', cursive;
     opacity: 1;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
 }
 
 .second-menu .hover .home-item {
 
+    background-image: -o-linear-gradient(45deg, #f5b312 -10%,#e80c0c );
+
     background-image: linear-gradient(45deg, #f5b312 -10%,#e80c0c );
     opacity: 1;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
@@ -314,8 +435,12 @@ nav.second-menu .bloc-droit li:not(:last-child) {
     width: 25px;
     height: 2px;
     background: red;
+    -webkit-transform: rotate(0) translateY(0);
+    -ms-transform: rotate(0) translateY(0);
     transform: rotate(0) translateY(0);
     opacity: 1;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
 }
 
@@ -332,6 +457,8 @@ nav.second-menu .bloc-droit li:not(:last-child) {
 }
 
 .btn-hamburger.active span:nth-child(1) {
+    -webkit-transform: rotate(45deg) translateY(12px);
+    -ms-transform: rotate(45deg) translateY(12px);
     transform: rotate(45deg) translateY(12px);
 }
 
@@ -340,6 +467,8 @@ nav.second-menu .bloc-droit li:not(:last-child) {
 }
 
 .btn-hamburger.active span:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translateY(-12px);
+    -ms-transform: rotate(-45deg) translateY(-12px);
     transform: rotate(-45deg) translateY(-12px);
 }
 
@@ -364,6 +493,8 @@ nav.second-menu .bloc-droit li:not(:last-child) {
 
     .bloc-droit li {
         opacity: 0;
+        -webkit-transform: translateY(-3rem);
+        -ms-transform: translateY(-3rem);
         transform: translateY(-3rem);
     }
 
@@ -375,8 +506,15 @@ nav.second-menu .bloc-droit li:not(:last-child) {
         margin: 0;
         width: 100vw;
         height: 100vh;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
     }
 
@@ -397,6 +535,8 @@ nav.second-menu .bloc-droit li:not(:last-child) {
 @media all and (max-width: 380px) {
 
     nav.second-menu {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 2rem 3rem 0 3rem;
     }
@@ -408,5 +548,4 @@ nav.second-menu .bloc-droit li:not(:last-child) {
         font-size: 2rem;
     }
 }
-
 

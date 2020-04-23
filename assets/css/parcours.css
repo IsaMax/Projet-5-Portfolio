@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 body {
     height: calc(100vh - 82px);
     overflow: hidden;
@@ -6,6 +8,7 @@ body {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -15,8 +18,12 @@ body {
 
 nav.position-portfolio {
     width: 14%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100vh;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding-left: 1rem;
 }
@@ -30,6 +37,8 @@ nav.position-portfolio {
 nav.position-portfolio ul {
     list-style-type: none;
     padding-left: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     position: fixed;
     width: 18%;
@@ -49,12 +58,20 @@ nav.position-portfolio .sub-elt .texte-fin {
     font-size: 0.8em;
     margin-left: 1rem;
     color: #00000000;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
     transform: translateX(-20px);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
 nav.position-portfolio .sub-elt {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     position: relative;
 }
@@ -67,8 +84,14 @@ nav.position-portfolio .sub-elt {
 }
 
 .container-parcours {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100vw;
     height: 100%;
@@ -81,8 +104,15 @@ nav.position-portfolio .sub-elt {
     list-style-type: none;
     padding-left: 0;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -93,16 +123,24 @@ nav.position-portfolio .sub-elt {
 
 .container-parcours .container-annees li a {
     opacity: 0;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
 .container-parcours .container-annees a.suivant, .container-parcours .container-annees a.precedent {
     opacity: .2;
+    -webkit-transform: scale(.8);
+    -ms-transform: scale(.8);
     transform: scale(.8);
 }
 
 .container-parcours .container-annees a.active {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
     transform: scale(1.5);
     opacity: 1;
 }
@@ -111,32 +149,54 @@ nav.position-portfolio .sub-elt {
     margin-left: 14rem;
     position: relative;
     top: -23%;
+    -ms-flex-item-align: start;
     align-self: flex-start;
     width: 400px;
+    -webkit-transform: translateX(300px);
+    -ms-transform: translateX(300px);
     transform: translateX(300px);
     opacity: 0;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
 .container-parcours .bloc-desc.afficher {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
 }
 
 .bloc-desc .couverture {
-   width: 100%;
+    width: 100%;
     height: 211px;
     background: #333;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
     transition: all .3s;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #ffffff73;
 }
 
 nav.second-menu .bloc-droit li.active a:after {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -174,13 +234,27 @@ nav.second-menu .bloc-droit li.active a:after {
     position: absolute;
     top: 1px;
     background: #FFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     overflow: hidden;
     z-index: -1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+    -webkit-box-shadow: 0 20px 50px rgba(0,0,0,.8);
     box-shadow: 0 20px 50px rgba(0,0,0,.8);
     padding: .5rem;
 }
@@ -192,12 +266,17 @@ nav.second-menu .bloc-droit li.active a:after {
 }
 
 .bloc-desc .container-desc.active:hover .couverture {
+    -webkit-transform: translateY(-104px);
+    -ms-transform: translateY(-104px);
     transform: translateY(-104px);
     /*box-shadow: inset 0 0 60px whitesmoke, inset 20px 0 80px #e80c0c, inset -20px 0 80px #f5b312, inset 20px 0 300px #e80c0c, inset -20px 0 300px #f5b312, 0 0 50px #fff, -10px 0 80px #e80c0c, 10px 0 80px #f5b312;*/
+    -webkit-box-shadow:inset 0 0 60px whitesmoke, inset 20px 0 80px #f5b312, inset -20px 0 80px #e80c0c, inset 20px 0 300px #f5b312, inset -20px 0 300px #e80c0c, 0 0 50px #fff, -10px 0 80px #f5b312, 10px 0 80px #e80c0c;
     box-shadow:inset 0 0 60px whitesmoke, inset 20px 0 80px #f5b312, inset -20px 0 80px #e80c0c, inset 20px 0 300px #f5b312, inset -20px 0 300px #e80c0c, 0 0 50px #fff, -10px 0 80px #f5b312, 10px 0 80px #e80c0c;
 }
 
 .bloc-desc .container-desc.active:hover .content {
+    -webkit-transform: translateY(104px);
+    -ms-transform: translateY(104px);
     transform: translateY(104px);
     height: auto;
     min-height: 211px;
@@ -209,11 +288,22 @@ nav.second-menu .bloc-droit li.active a:after {
 }
 
 .second-menu .default .home-item {
+    -webkit-animation: menuDefault 4s infinite;
     animation: menuDefault 4s infinite;
 }
 
 .second-menu .hover .home-item {
+    -webkit-animation:  menuHover 4s infinite;
     animation:  menuHover 4s infinite;
+}
+
+@-webkit-keyframes menuDefault {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes menuDefault {
@@ -222,6 +312,16 @@ nav.second-menu .bloc-droit li.active a:after {
     }
     50% {
         opacity: 0;
+    }
+}
+
+
+@-webkit-keyframes menuHover {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
     }
 }
 
@@ -238,6 +338,7 @@ nav.second-menu .bloc-droit li.active a:after {
 .material-icons {
     font-size: 6em;
     color: #333333;
+    -webkit-filter: drop-shadow(3px 3px 2px #282828) drop-shadow(-3px -3px 2px #3e3e3e);
     filter: drop-shadow(3px 3px 2px #282828) drop-shadow(-3px -3px 2px #3e3e3e);
 }
 
@@ -249,6 +350,7 @@ nav.second-menu .bloc-droit li.active a:after {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -258,7 +360,11 @@ nav.second-menu .bloc-droit li.active a:after {
 
 .div--material-icones {
     width: 245px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -267,13 +373,18 @@ i.icone-marge-droite {
 }
 
 .container-annees {
+    -webkit-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
     transform: translateX(-300px);
     opacity: 0;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
 
 .container-annees.afficher {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
     opacity: 1;
 }
-

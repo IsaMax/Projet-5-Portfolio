@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 /****** PAGE CONTACT *******/
 
 @media all and (max-width: 1200px) {
@@ -14,6 +16,9 @@
 @media all and (max-width: 750px) {
 
     .infos-contact {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
     }
 
@@ -52,6 +57,9 @@
 @media all and (max-width: 850px) {
 
     .cp--body {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
         margin-top: 4rem;
     }
@@ -75,9 +83,9 @@
 
 @media all and (max-width: 400px) {
 
-  .container-projet h1 {
-      font-size: 2.5rem;
-  }
+    .container-projet h1 {
+        font-size: 2.5rem;
+    }
 }
 
 
@@ -124,6 +132,9 @@
 
     .container-parcours {
         top: 10%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
 
@@ -136,6 +147,10 @@
     }
 
     .container-parcours .bloc-desc.afficher {
+
+        -ms-flex-item-align: center;
+
+        -ms-grid-row-align: center;
 
         align-self: center;
     }
@@ -243,7 +258,7 @@
 @media all and (max-width: 450px) {
 
     nav.position-portfolio {
-       display: none;
+        display: none;
     }
 
     .filtres ul a {
@@ -278,6 +293,9 @@
     }
 
     .categorie {
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
         flex-direction: column !important;
         width: 16rem !important;
     }
@@ -326,8 +344,11 @@
     }
 
     .body--second-page .section-intro {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
         transform: scale(1);
         overflow: visible;
+        -webkit-box-shadow: none;
         box-shadow: none;
     }
 
@@ -340,7 +361,11 @@
         left:0;
         top: 73%;
         background-color: #FFF;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
     }
@@ -351,6 +376,8 @@
         left: 0;
         margin: 0 auto;
         top:0;
+        -webkit-transform: translateY(29%);
+        -ms-transform: translateY(29%);
         transform: translateY(29%);
     }
 
@@ -393,12 +420,16 @@
         opacity: 0;
         width: 100%;
         text-align: center;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
         font-size: 2.5em;
         margin-bottom: 0;
     }
 
     .a-propos {
+        -webkit-transform: translateY(14%);
+        -ms-transform: translateY(14%);
         transform: translateY(14%);
     }
 }
@@ -416,7 +447,7 @@
 
 @media (max-width: 1180px) {
     .wrapper-jesuis { left: 40.8% !important;; }
-    .nom-prenom { transform: translate(-50%,-50%) scale(1); }
+    .nom-prenom { -webkit-transform: translate(-50%,-50%) scale(1); -ms-transform: translate(-50%,-50%) scale(1); transform: translate(-50%,-50%) scale(1); }
 }
 
 @media (max-width: 1082px) { .wrapper-jesuis { left: 39.8% !important;; } }
@@ -426,6 +457,8 @@
 @media (max-width: 822px) {
     .wrapper-jesuis { left: 36.7% !important;; }
     .nom-prenom {
+        -webkit-transform: translate(-50%,-50%) scale(.8);
+        -ms-transform: translate(-50%,-50%) scale(.8);
         transform: translate(-50%,-50%) scale(.8);
     }
 }
@@ -435,6 +468,8 @@
 @media (max-width: 685px) {
     .wrapper-jesuis { left: 38%; font-size: 1.5em; }
     .main-menu {
+        -webkit-transform: translate(-50%, 0) scale(.8);
+        -ms-transform: translate(-50%, 0) scale(.8);
         transform: translate(-50%, 0) scale(.8);
         bottom: -1% !important;
     }
@@ -444,10 +479,14 @@
 @media (max-width: 508px) {
     .wrapper-jesuis { left: 36% !important;; font-size: 1.3em; }
     .nom-prenom {
+        -webkit-transform: translate(-50%,-50%) scale(.5);
+        -ms-transform: translate(-50%,-50%) scale(.5);
         transform: translate(-50%,-50%) scale(.5);
     }
 
     .main-menu {
+        -webkit-transform: translate(-50%, 0) scale(.6);
+        -ms-transform: translate(-50%, 0) scale(.6);
         transform: translate(-50%, 0) scale(.6);
         bottom: -4% !important;
     }
@@ -460,6 +499,8 @@
 @media (max-width: 388px) {
     .wrapper-jesuis { left: 35.7% !important;; }
     .main-menu {
+        -webkit-transform: translate(-50%, 0) scale(.5);
+        -ms-transform: translate(-50%, 0) scale(.5);
         transform: translate(-50%, 0) scale(.5);
         bottom: -4.6% !important;
     }
@@ -471,6 +512,7 @@
 @media (max-width: 1100px) {
 
     .body--premiere-page .section-intro {
+        -webkit-box-shadow: 3px 3px 20px 10px #00000036;
         box-shadow: 3px 3px 20px 10px #00000036;
         overflow: hidden;
     }
@@ -478,7 +520,7 @@
 
 @media (max-height: 640px) {
     .main-menu {
-        bottom: -6% !important;
+        bottom: -7% !important;
     }
 
     .block-white.av {

@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 :root {
     --base1: #EBEFF3;
     --base2: #C3D0DB;
@@ -88,8 +90,10 @@ input:not([type=checkbox]), textarea {
     margin-top: 5px;
     background: var(--base2);
     border: 2px solid var(--base2);
+    -webkit-box-shadow: var(--input-shadow);
     box-shadow: var(--input-shadow);
     -webkit-transition: var(--shadow-transition);
+    -o-transition: var(--shadow-transition);
     transition: var(--shadow-transition);
     color: var(--base3);
 }
@@ -99,6 +103,8 @@ input:not([type=checkbox]), textarea {
 }
 
 .group.chekbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -107,6 +113,8 @@ input:not([type=checkbox]), textarea {
 }
 
 input#chekbox {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
     display: block;
 }
@@ -120,6 +128,7 @@ input#chekbox {
     font-weight: 900;
     text-transform: uppercase;
     -webkit-transition: var(--shadow-transition);
+    -o-transition: var(--shadow-transition);
     transition: var(--shadow-transition);
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -127,11 +136,13 @@ input#chekbox {
     color: var(--baseDark2);
     background: var(--base2);
     border: 2px solid var(--base2);
+    -webkit-box-shadow: var(--base-shadow);
     box-shadow: var(--base-shadow);
 }
 
 .send input:hover {
     outline: none;
+    -webkit-box-shadow: var(--base-shadow-active);
     box-shadow: var(--base-shadow-active);
     color: var(--baseDark2);
     border-color: var(--base3);
@@ -146,8 +157,10 @@ input#chekbox {
     left: 18px;
     top: 17px;
     -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
     transform-origin: left top;
     -webkit-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
     transition: all 0.25s linear;
 }
 
@@ -159,6 +172,7 @@ input#chekbox {
     outline: none;
     color: var(--baseDark2);
     border-color: var(--base3);
+    -webkit-box-shadow: var(--input-shadow-active);
     box-shadow: var(--input-shadow-active);
 }
 
@@ -169,15 +183,22 @@ input#chekbox {
 .container-contact textarea.active + label,
 .container-contact textarea:focus:enabled + label {
     -webkit-transform: translateY(-34px) scale(0.9);
+    -ms-transform: translateY(-34px) scale(0.9);
     transform: translateY(-34px) scale(0.9);
     font-weight: 600;
 }
 
 .container-contact {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 87%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 5rem;
 }
@@ -185,6 +206,8 @@ input#chekbox {
 .success {
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     color: black;
     background: #73dc73;
@@ -205,7 +228,10 @@ input#chekbox {
 .infos-contact {
     position: relative;
     top: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
@@ -218,13 +244,17 @@ input#chekbox {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .infos-contact {
     position: relative;
     top: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 
@@ -251,12 +281,22 @@ input#chekbox {
     position: absolute;
     bottom: -2px;
     left: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
     transform-origin: center;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    -o-transition: transform .3s;
     transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
 }
 
 .infos-contact div a:hover:after {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
 }
 
@@ -265,16 +305,22 @@ textarea {
 }
 
 .infos-contact .tel {
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
     transform: translateX(50%);
     opacity: 0;
 }
 
 .infos-contact .mail {
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
     transform: translateX(50%);
     opacity: 0;
 }
 
 .container-contact form {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
     transform: translateY(50%);
     opacity: 0;
 }

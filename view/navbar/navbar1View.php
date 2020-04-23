@@ -2,28 +2,28 @@
     <div class="wrapper-circle">
         <div class="circle"></div>
     </div>
-    <ul>
+
+    <div>
         <div class="wrapper-sub-menu-home" data-dir="0">
-            <li class="sub-menu home"><a href="accueil"></a></li>
+            <span class="sub-menu home"><a href="accueil"></a></span>
         </div>
 
 
         <div class="wrapper-sub-menu-portfolio" data-dir="1">
-            <li class="sub-menu portfolio"><a href="projets"></a></li>
+            <span class="sub-menu portfolio"><a href="projets"></a></span>
         </div>
 
         <div class="wrapper-sub-menu-contact" data-dir="2">
-            <li class="sub-menu contact"><a href="contact"></a></li>
+            <span class="sub-menu contact"><a href="contact"></a></span>
         </div>
 
-        <div class="wrapper-sub-menu-desc"
-             data-dir="-1">
-            <li class="sub-menu desc"><a href="a-propos"></a></li>
+        <div class="wrapper-sub-menu-desc" data-dir="-1">
+            <span class="sub-menu desc"><a href="a-propos"></a></span>
         </div>
 
         <div class="wrapper-sub-menu-cv" data-dir="-2">
-            <li class="sub-menu cv"><a href="parcours"></a></li>
+            <span class="sub-menu cv"><a href="parcours"></a></span>
         </div>
 
-    </ul>
+    </div>
 </nav>
