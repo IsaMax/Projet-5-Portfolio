@@ -219,10 +219,10 @@ try {
 
                 authentificationController::connexion();
                 break;
-            case 'inscription':
-
-                authentificationController::inscription();
-                break;
+//            case 'inscription':
+//
+//                authentificationController::inscription();
+//                break;
             default:
                 header('Location: se-connecter');
                 break;

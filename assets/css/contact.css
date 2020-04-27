@@ -213,7 +213,7 @@ input#chekbox {
     background: #73dc73;
     padding: 1rem;
     font-size: 1.2em;
-    display: none;
+   /*display: none; */
 }
 
 [type=checkbox]:hover {

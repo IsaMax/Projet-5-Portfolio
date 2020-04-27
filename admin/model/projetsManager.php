@@ -95,7 +95,7 @@ class projetsManager extends Manager {
 
         $data = $this->dbConnect();
 
-        $id = $data->prepare('INSERT INTO photo_projet(nom_projet, url)
+        $id = $data->prepare('INSERT INTO photo_projet(nom_projet, url_photo)
                        VALUES(:nom_projet, :url)');
 
         $id->execute(array(

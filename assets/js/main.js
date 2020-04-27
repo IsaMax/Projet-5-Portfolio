@@ -299,14 +299,11 @@ window.addEventListener('load', function() {
 
         window.setTimeout(function () {
             var temp1 = document.querySelectorAll('.a-propos strong');
-            // var temp2 = document.querySelectorAll('.a-propos .desc2 strong');
-            // var temp3 = document.querySelectorAll('.a-propos .desc3 strong');
-            console.log(temp1)
+
             for (var i = 0; i < temp1.length; i++) {
 
                 temp1[i].classList.add('active');
-                // temp2[i].classList.add('active');
-                // temp3[i].classList.add('active');
+
             }
         },4000);
 
@@ -339,7 +336,6 @@ window.addEventListener('load', function() {
                 return b.nbr - a.nbr;
             });
 
-            console.log(tabDiv.length)
 
             afficherCompetencesTriees(tabDiv, tabDivnonO);
 
@@ -351,7 +347,7 @@ window.addEventListener('load', function() {
             setTimeout(function () {
 
                 for (var i = 0; i < tabO.length; i++) {
-                    console.log(tabnnO[i].elt[0].classList.value == tabO[i].elt[0].classList.value)
+
                     if (tabO[i].elt[0].classList.value !== tabnnO[i].elt[0].classList.value) {
 
                         gsap.to(tabO[i].elt[0], {

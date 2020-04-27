@@ -1,8 +1,4 @@
 <?php
-// verifier valeur des variables dans les controllers
-//faire exception
-
-//charger filtres projets avec ajax
 
 require 'autoload.php';
 

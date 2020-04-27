@@ -51,21 +51,21 @@ ob_start();
 <!--    </div>-->
 <!--</div>-->
 
-<div class="row">
-    <div class="col-xl-6">
-        <div class="card mb-4">
-            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>
-            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-        </div>
-    </div>
-
-    <div class="col-xl-6">
-        <div class="card mb-4">
-            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Bar Chart Example</div>
-            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-        </div>
-    </div>
-</div>
+<!--<div class="row">-->
+<!--    <div class="col-xl-6">-->
+<!--        <div class="card mb-4">-->
+<!--            <div class="card-header"><i class="fas fa-chart-area mr-1"></i>Area Chart Example</div>-->
+<!--            <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--    <div class="col-xl-6">-->
+<!--        <div class="card mb-4">-->
+<!--            <div class="card-header"><i class="fas fa-chart-bar mr-1"></i>Bar Chart Example</div>-->
+<!--            <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div id="FormJsProjet">
 
@@ -86,6 +86,7 @@ ob_start();
                             $i = 0;
                                 foreach ($lesPhotos as $url) {
 
+                                  
                                     if($url['nom_projet'] == $projet['nom_projet_encode']) {
 
 
@@ -94,7 +95,7 @@ ob_start();
                                         <?php
                                         if($i == 0) { echo 'active'; }
                                         ?>">
-                                            <div class="photo-elt d-block w-100" style="background-image: url(<?= $url['url']; ?>)"></div>
+                                            <div class="photo-elt d-block w-100" style="background-image: url(<?= $url['url_photo']; ?>)"></div>
                                         </div>
 
                                       <?php

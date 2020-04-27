@@ -4,12 +4,9 @@ ob_start();
 ?>
 
 <?php
-
+echo $success;
 if($success == 1) {
     echo '<div class="success" data-success="1">&#10003;   Message envoyé</div>';
-}
-else {
-    echo '<div class="success" data-success="0">&#10003;   Message envoyé</div>';
 }
 ?>
 

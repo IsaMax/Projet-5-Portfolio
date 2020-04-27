@@ -524,6 +524,10 @@
     }
 
     .block-white.av {
-        top: 197%;
+        top: 194%;
+    }
+
+    .bloc-competences {
+        margin-bottom: 21rem;
     }
 }

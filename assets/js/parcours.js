@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 
             if (window.outerWidth <= 1370 && window.outerWidth > 1250) {
 
-                if (e.deltaY > 0) {
+                if (e.deltaY > 0) {  // haut (roulette vers le bas)
 
                     if (Math.abs(compteur) < (nombreAnnees - 1)) {
                         compteur--;
@@ -78,7 +78,7 @@ window.addEventListener('load', function() {
                 }
             } else {
 
-                if (e.deltaY > 0) {
+                if (e.deltaY > 0) { // haut (roulette vers le bas)
 
                     if (Math.abs(compteur) < (nombreAnnees - 1)) {
                         compteur--;
@@ -121,9 +121,8 @@ window.addEventListener('load', function() {
         });
 
         document.querySelector('.container-annees ul').addEventListener('touchend', function (e) {
-
-            console.log(compteur)
-            if (distance < -10) // up
+            
+            if (distance < -10) // haut
             {
 
                 if (Math.abs(compteur) < (nombreAnnees - 1)) {
@@ -134,7 +133,7 @@ window.addEventListener('load', function() {
                 }
 
             }
-            else if (distance > 10) { // down
+            else if (distance > 10) { // bas
 
                 if (Math.abs(compteur) > 0) {
                     compteur++;
@@ -153,6 +152,7 @@ window.addEventListener('load', function() {
     function definiCompteur() {
 
 
+        // reset des classes
         for (var i = 0; i < nombreAnnees; i++) {
 
             aElts[i].classList.remove('active');
@@ -163,7 +163,7 @@ window.addEventListener('load', function() {
 
         for (var i = 0; i < nombreAnnees; i++) {
 
-            if (i === Math.abs(compteur)) {
+            if (i === Math.abs(compteur)) { // on récupère la valeur absolue du compteur
 
                 aElts[i].classList.add('active');
 

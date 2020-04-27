@@ -50,9 +50,12 @@ class projetsController {
 
         $data = new projetsManager();
 
+        $search = [' ', 'é', 'è', '\''];
+        $remplacement = ['-','e','e','-'];
+        $_POST['categorie'] = str_replace($search, $remplacement, $_POST['categorie']);
+
         $data->saveNewProjet();
 
-        $_POST['categorie'] = str_replace(' ', '-', $_POST['categorie']);
 
         if(isset($_FILES)) {
 

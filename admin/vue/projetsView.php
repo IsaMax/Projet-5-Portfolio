@@ -28,7 +28,7 @@
             ?>
 
             <div class="bloc-photos">
-                <div width="300" height="200" style="background-image: url(<?= $photo["url"] ?>)"  class="photoAModifier"></div>
+                <div width="300" height="200" style="background-image: url(<?= $photo["url_photo"] ?>)"  class="photoAModifier"></div>
                 <a href="index.php?action=projets&amp;supprimerPhoto=true&amp;id_photo=<?= $photo["id"] ?>">&#x1f5d1;</a>
             </div>
             <?php

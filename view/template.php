@@ -9,6 +9,7 @@
     <title><?= $titlePage ?></title>
     <meta name="description" content="Portfolio de Maxime Isambert, développeur Drupal 8, Wordpress, PHP, Javascript, développeur Front-End">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/img/icon/favicon.png" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -38,33 +39,35 @@
         }
     ?>
 
-<script src="tarteaucitron/tarteaucitron.js"></script>
-
+<!--<script src="tarteaucitron/tarteaucitron.js"></script>-->
+<script type="text/javascript" id="cookieinfo"
+        src="//cookieinfoscript.com/js/cookieinfo.min.js">
+</script>
 <script>
-    tarteaucitron.init({
-        "privacyUrl": "", /* Privacy policy url */
-
-        "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-        "cookieName": "tarteaucitron", /* Cookie name */
-
-        "orientation": "middle", /* Banner position (top - bottom) */
-        "showAlertSmall": true, /* Show the small banner on bottom right */
-        "cookieslist": true, /* Show the cookie list */
-
-        "adblocker": false, /* Show a Warning if an adblocker is detected */
-        "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
-        "highPrivacy": true, /* Disable auto consent */
-        "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
-
-        "removeCredit": false, /* Remove credit link */
-        "moreInfoLink": true, /* Show more info link */
-        "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
-
-        //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
-
-        "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
-
-    });
+    // tarteaucitron.init({
+    //     "privacyUrl": "", /* Privacy policy url */
+    //
+    //     "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+    //     "cookieName": "tarteaucitron", /* Cookie name */
+    //
+    //     "orientation": "middle", /* Banner position (top - bottom) */
+    //     "showAlertSmall": true, /* Show the small banner on bottom right */
+    //     "cookieslist": true, /* Show the cookie list */
+    //
+    //     "adblocker": false, /* Show a Warning if an adblocker is detected */
+    //     "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+    //     "highPrivacy": true, /* Disable auto consent */
+    //     "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+    //
+    //     "removeCredit": false, /* Remove credit link */
+    //     "moreInfoLink": true, /* Show more info link */
+    //     "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+    //
+    //     //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+    //
+    //     "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
+    //
+    // });
     var timeLine;
 
     function lanceMenu() {
@@ -108,11 +111,6 @@
     }
 
     lanceMenu();
-
-
-    // document.querySelector('.btn-hamburger.active').addEventListener('click', function (evt) {
-    //
-    // });
     
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>

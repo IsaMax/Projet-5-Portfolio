@@ -14,19 +14,6 @@ window.addEventListener('load', function() {
 
     }
 
-    var success = document.querySelector('.success');
-
-    if(success.dataset.success === 1) {
-
-        success.style.display = 'block';
-        window.setTimeout(function() {
-
-            success.style.display = 'none';
-
-        }, 3000)
-    }
-
-
     gsap.to('.infos-contact .mail', {
         x:0,
         opacity:1
@@ -42,4 +29,14 @@ window.addEventListener('load', function() {
         opacity:1,
         delay: .5
     });
+
+    if(document.querySelector('.success')) {
+
+        document.querySelector('.success').style.display = 'block';
+        window.setTimeout(function() {
+
+            document.querySelector('.success').style.display = 'none';
+
+        }, 3000)
+    }
 });

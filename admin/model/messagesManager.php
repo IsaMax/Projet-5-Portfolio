@@ -13,7 +13,7 @@ class messagesManager extends Manager {
     }
 
 
-    public function deleteProjet() {
+    public function deleteMessage() {
 
         $data = $this->dbConnect();
 

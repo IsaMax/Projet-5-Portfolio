@@ -76,7 +76,6 @@ window.addEventListener('load', function() {
 
                     var ancre = this.id;
 
-                    console.log(ancre)
 
                     for(var a = 0 ; a < lienCible.length ; a++) {
 
@@ -103,6 +102,7 @@ window.addEventListener('load', function() {
         });
 
 
+        //Système de filtres avec Ajax
         var filtres = document.querySelectorAll('.container-filtres .filtres a');
 
         var projets =  document.querySelectorAll('.bloc-central a');
@@ -114,7 +114,7 @@ window.addEventListener('load', function() {
 
                 var categorie = this.dataset.categorie;
                 var url = 'projets-'+categorie;
-                console.log(url)
+
                 loadProjetAjax(url)
             });
 
@@ -127,10 +127,9 @@ window.addEventListener('load', function() {
 
         var xhr = new XMLHttpRequest();
 
-        // On souhaite juste récupérer le contenu du fichier, la méthode GET suffit amplement :
         xhr.open('GET', url);
 
-        xhr.addEventListener('readystatechange', function() { // On gère ici une requête asynchrone
+        xhr.addEventListener('readystatechange', function() { // requête asynchrone
 
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) { // Si le fichier est chargé sans erreur
 
